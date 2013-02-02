@@ -5,6 +5,7 @@ class Municipality
 
   field :name, type: String
   field :ost_id, type: Integer
+  field :driver, type: String
 
   has_many :reports
 
