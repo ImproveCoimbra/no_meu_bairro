@@ -52,9 +52,12 @@ class ReportsController < ApplicationController
 
 
       @report = Report.new()
+      @report.user = @user
       @report.description=params[:report][:description]
       @report.coordinates = [params[:report][:coordinates][0], params[:report][:coordinates][1]]
-      @report.user = @user
+      @report.municipality=MunicipalityFinder.find_municipality(@report.coordinates)
+
+
 
       respond_to do |format|
         if @report.save
