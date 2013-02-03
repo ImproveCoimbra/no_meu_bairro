@@ -8,6 +8,8 @@ class Report
   field :images, type: Array
   field :create_date, type: DateTime
   field :closure_date, type: DateTime
+  # We do not deleted a record. But we mark it as deleted and do not return it
+  field :deleted_date, type:DateTime
 
   index({ coordinates: "2d" })
 

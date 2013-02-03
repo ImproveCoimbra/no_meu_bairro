@@ -5,9 +5,14 @@ class ReportsController < ApplicationController
   def index
 
     if params["mine"] !=nil && params["mine"].to_bool
-      @reports = Report.where(:user => User.find_by(:uuid => request.headers["Bitching-Client"]))
+      @reports = Report.where(
+          :user => User.find_by(:uuid => request.headers["Bitching-Client"]),
+          :deleted_date.exists => false
+      )
     else
-      @reports = Report.all
+      @reports = Report.where(
+          :deleted_date.exists => false
+      )
     end
     respond_to do |format|
       format.html # index.html.erb
@@ -19,7 +24,8 @@ class ReportsController < ApplicationController
   # GET /reports/1.json
   def show
 
-    @report = Report.find_by("_id" => params[:id])
+    @report = Report.where("_id" => params[:id],
+                           :deleted_date.exists => false)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -29,7 +35,10 @@ class ReportsController < ApplicationController
 
   # GET /reports/1/edit
   def edit
-    @report = Report.find_by("_id" => params[:id], :user => User.find_by(:uuid => request.headers["Bitching-Client"]))
+    @report = Report.where("_id" => params[:id],
+                           :user => User.find_by(:uuid => request.headers["Bitching-Client"]),
+                           :deleted_date.exists => false
+    )
   end
 
 
@@ -69,11 +78,10 @@ class ReportsController < ApplicationController
       respond_to do |format|
         if @report.save
 
-
-
-
-          @report.municipality.driver.constantize.new(@report)
-
+          #If Municipality has a driver we push it
+          if @report.municipality.driver != nil
+            @report.municipality.driver.constantize.new(@report)
+          end
 
           #format.html { redirect_to @report, notice: 'Report was successfully created.' }
           format.json { render json: @report, status: :created, location: @report }
