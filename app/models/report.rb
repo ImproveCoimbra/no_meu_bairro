@@ -6,6 +6,8 @@ class Report
   field :description, type: String
   field :coordinates, type: Array
   field :images, type: Array
+  field :create_date, type: DateTime
+  field :closure_date, type: DateTime
 
   index({ coordinates: "2d" })
 
@@ -16,6 +18,13 @@ class Report
 
   validates :description, presence: true
   validates :coordinates, presence: true
+  validates :create_date, presence: true
+
+
+  after_initialize do |document|
+    document.create_date = DateTime.now
+  end
+
 
   def lixo
 
