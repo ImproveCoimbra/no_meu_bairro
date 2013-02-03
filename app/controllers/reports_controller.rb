@@ -35,7 +35,7 @@ class ReportsController < ApplicationController
 
   # GET /reports/1/edit
   def edit
-    @report = Report.where("_id" => params[:id],
+    @report = Report.find_by("_id" => params[:id],
                            :user => User.find_by(:uuid => request.headers["Bitching-Client"]),
                            :deleted_date.exists => false
     )

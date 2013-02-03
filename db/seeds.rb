@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Municipality.create(ost_id: 379,
+                    name: "Coimbra",
+                    driver: "CoimbraPortugalBitchingDriver")
