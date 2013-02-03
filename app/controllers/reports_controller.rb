@@ -1,10 +1,11 @@
 class ReportsController < ApplicationController
   # GET /reports
+  # GET /reports?mine=true
   # GET /reports.json
   def index
 
-    if params[:uuid] != nil
-      @reports = Report.where(:user => User.find_by(:uuid => params[:uuid]))
+    if params["mine"] !=nil && params["mine"].to_bool
+      @reports = Report.where(:user => User.find_by(:uuid => request.headers["Bitching-Client"]))
     else
       @reports = Report.all
     end
