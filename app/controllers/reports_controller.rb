@@ -24,7 +24,7 @@ class ReportsController < ApplicationController
   # GET /reports/1.json
   def show
 
-    @report = Report.where("_id" => params[:id],
+    @report = Report.find_by("_id" => params[:id],
                            :deleted_date.exists => false)
 
     respond_to do |format|
@@ -126,12 +126,20 @@ class ReportsController < ApplicationController
   # DELETE /reports/1
   # DELETE /reports/1.json
   def destroy
-    @report = Report.find(params[:id])
-    @report.destroy
 
-    respond_to do |format|
-      #format.html { redirect_to reports_url }
-      format.json { head :no_content }
+    @report = Report.find_by("_id" => params[:id],
+                           :user => User.find_by(:uuid => request.headers["Bitching-Client"]),
+                           :deleted_date.exists => false)
+
+    if @report != nil
+
+      @report.deleted_date = DateTime.now
+      @report.save
+
+      respond_to do |format|
+        #format.html { redirect_to reports_url }
+        format.json { head :no_content }
+      end
     end
   end
 end

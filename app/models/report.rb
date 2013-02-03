@@ -23,10 +23,10 @@ class Report
   validates :create_date, presence: true
 
 
-  after_initialize do |document|
-    document.create_date = DateTime.now
+  def initialize()
+      super()
+      self.create_date = DateTime.now
   end
-
 
   def lixo
 
