@@ -50,17 +50,22 @@ class ReportsController < ApplicationController
         @user = User.create!(:uuid => requested_uuid)
       end
 
+      json_report = ActiveSupport::JSON.decode(params[:json])
 
       @report = Report.new()
       @report.user = @user
-      @report.description=params[:report][:description]
-      @report.coordinates = [params[:report][:coordinates][0], params[:report][:coordinates][1]]
+      @report.description=json_report["report"]["description"]
+      @report.coordinates = [json_report["report"]["coordinates"][0], json_report["report"]["coordinates"][1]]
       @report.municipality=MunicipalityFinder.find_municipality(@report.coordinates)
 
 
 
       respond_to do |format|
         if @report.save
+
+          @report.municipality.driver.constantize.new(@report)
+
+
           #format.html { redirect_to @report, notice: 'Report was successfully created.' }
           format.json { render json: @report, status: :created, location: @report }
         else
