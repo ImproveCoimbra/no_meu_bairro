@@ -63,6 +63,11 @@ class ReportsController < ApplicationController
       respond_to do |format|
         if @report.save
 
+          uploaded_io = params["file"]
+          File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+            file.write(uploaded_io.read)
+          end
+
           @report.municipality.driver.constantize.new(@report)
 
 
