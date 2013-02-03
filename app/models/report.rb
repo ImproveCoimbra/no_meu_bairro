@@ -5,6 +5,7 @@ class Report
 
   field :description, type: String
   field :coordinates, type: Array
+  field :images, type: Array
 
   index({ coordinates: "2d" })
 

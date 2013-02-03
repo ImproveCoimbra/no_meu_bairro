@@ -2,8 +2,12 @@ class ReportsController < ApplicationController
   # GET /reports
   # GET /reports.json
   def index
-    @reports = Report.all
 
+    if params[:uuid] != nil
+      @reports = Report.where(:user => User.find_by(:uuid => params[:uuid]))
+    else
+      @reports = Report.all
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @reports }
@@ -57,16 +61,15 @@ class ReportsController < ApplicationController
       @report.description=json_report["report"]["description"]
       @report.coordinates = [json_report["report"]["coordinates"][0], json_report["report"]["coordinates"][1]]
       @report.municipality=MunicipalityFinder.find_municipality(@report.coordinates)
-
-
+      @report.images = []
+      #Save images
+      save_request_images()
 
       respond_to do |format|
         if @report.save
 
-          uploaded_io = params["file"]
-          File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
-            file.write(uploaded_io.read)
-          end
+
+
 
           @report.municipality.driver.constantize.new(@report)
 
@@ -80,6 +83,19 @@ class ReportsController < ApplicationController
       end
     end
 
+  end
+
+  def save_request_images
+    i=1
+    while params["file#{i}"] != nil do
+      uploaded_io = params["file#{i}"]
+      final_image_name = "#{@report._id}-#{i}#{File.extname(uploaded_io.original_filename)}"
+      @report.images << final_image_name
+      File.open(Rails.root.join('public', 'uploads', final_image_name), 'wb') do |file|
+        file.write(uploaded_io.read)
+      end
+      i+=1
+    end
   end
 
   # PUT /reports/1
