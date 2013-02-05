@@ -1,5 +1,24 @@
 class MunicipalitiesController < ApplicationController
 
+  # GET /municipalities
+  # GET /municipalities.json
+  def index
+
+
+    @municipalities = Municipality.all
+
+    @municipalities.each do |municipality|
+      municipality.driver = nil
+    end
+
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @municipalities }
+    end
+  end
+
+
   def show
 
     @municipality = Municipality.find_by("_id" => params[:id])
