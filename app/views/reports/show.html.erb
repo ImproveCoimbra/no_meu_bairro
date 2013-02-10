@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -8,8 +9,16 @@
 <p>
   <b>Coordinates:</b>
   <%= @report.coordinates %>
+
+
+
 </p>
 
+<div id="map_canvas" style="width:100%; height:100%"></div>
+
+<script type="text/javascript">
+    initialize_map('map_canvas' ,<%= @report.coordinates[1] %>, <%= @report.coordinates[0] %>);
+</script>
 
 <%= link_to 'Edit', edit_report_path(@report) %> |
 <%= link_to 'Back', reports_path %>
