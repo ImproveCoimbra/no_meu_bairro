@@ -3,14 +3,11 @@ class MunicipalitiesController < ApplicationController
   # GET /municipalities
   # GET /municipalities.json
   def index
-
-
     @municipalities = Municipality.all
 
     @municipalities.each do |municipality|
       municipality.driver = nil
     end
-
 
     respond_to do |format|
       format.html # index.html.erb
@@ -20,7 +17,6 @@ class MunicipalitiesController < ApplicationController
 
 
   def show
-
     @municipality = Municipality.find_by("_id" => params[:id])
 
     if @municipality != nil
@@ -32,5 +28,4 @@ class MunicipalitiesController < ApplicationController
       format.json { render json: @municipality }
     end
   end
-
 end
