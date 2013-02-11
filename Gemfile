@@ -15,6 +15,8 @@ gem 'sqlite3'
 
 gem 'jquery-rails'
 
+gem "mimetype-fu", :require => 'mimetype_fu'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
