@@ -19,10 +19,10 @@
 <script type="text/javascript">
     initialize_map('map_canvas' ,<%= @report.coordinates[1] %>, <%= @report.coordinates[0] %>);
 </script>
-<%#
-    TODO add the links to the images http://localhost:3000/report_images/510e8796dcea44d4a3000006-1.jpg
-    TODO need to see how to create image link to a controller
- %>
+
+<% @report.images.to_a.each do |image| %>
+    <%= image_tag(url_for({:controller => 'report_images', :action => 'show', :id => image})) %>
+<% end %>
 
 <%= link_to 'Edit', edit_report_path(@report) %> |
 <%= link_to 'Back', reports_path %>
