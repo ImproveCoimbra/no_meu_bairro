@@ -7,7 +7,7 @@ class AbstractBitchingDriver
   end
 
   def get_message
-    "Foi detectado o problema: #{:report.description}"
+    "Foi detectado o problema: #{@report.description}"
   end
 
   def notify

@@ -1,4 +1,5 @@
 class MailBitchingDriver < AbstractBitchingDriver
+  require 'net/smtp'
 
   APP_NAME = 'Bitching Server'
   APP_MAIL = 'humpback@gmail.com'
