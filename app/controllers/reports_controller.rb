@@ -80,7 +80,7 @@ class ReportsController < ApplicationController
 
           #If Municipality has a driver we push it
           if @report.municipality.driver != nil
-            @report.municipality.driver.constantize.new(@report)
+            @report.municipality.driver.constantize.new(@report).notify
           end
 
           #format.html { redirect_to @report, notice: 'Report was successfully created.' }

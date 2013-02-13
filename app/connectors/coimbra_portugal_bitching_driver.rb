@@ -1,10 +1,7 @@
-class CoimbraPortugalBitchingDriver < AbstractBitchingDriver
+class CoimbraPortugalBitchingDriver < MailBitchingDriver
 
-  def report_to_external_server
-
-    message = get_message
-
-
+  def notify
+    send_mail('Destino Coimbra', 'gustavo@felisberto.net')
   end
 
 end

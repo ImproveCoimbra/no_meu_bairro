@@ -10,4 +10,8 @@ class AbstractBitchingDriver
     "Foi detectado o problema: #{:report.description}"
   end
 
+  def notify
+
+  end
+
 end
