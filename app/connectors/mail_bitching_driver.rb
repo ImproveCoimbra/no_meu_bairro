@@ -5,12 +5,13 @@ class MailBitchingDriver < AbstractBitchingDriver
   APP_GMAIL_SMTP_PASS = 'you wanted this password right?'
 
   def send_mail(destination_name, destination_mail)
+    #TODO fix issue with having non ASCII chars in message
     message = <<MESSAGE_END
 From: #{APP_NAME} <#{APP_MAIL}>
 To: #{destination_name} <#{destination_mail}>
 MIME-Version: 1.0
 Content-type: text/html
-Subject: Notificação de Problema
+Subject: Notificacao de Problema
 
 #{get_message}
 
