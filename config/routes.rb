@@ -1,6 +1,4 @@
 Bitchingserver::Application.routes.draw do
-
-  resources :reports, :except => [:edit, :destroy]
+  resources :reports, :except => [:edit, :update, :destroy]
   resources :municipalities, :only => [:index, :show]
-  resources :report_images
 end
