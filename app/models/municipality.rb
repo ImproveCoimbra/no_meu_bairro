@@ -6,10 +6,14 @@ class Municipality
 
   field :name, type: String
   field :ost_id, type: Integer
-  field :driver, type: String
+  field :driver_str, type: String
 
   has_many :reports
 
   index({ ost_id: 1 }, { background: true, unique:true })
+
+  def driver
+    driver_str.constantize rescue nil
+  end
 
 end

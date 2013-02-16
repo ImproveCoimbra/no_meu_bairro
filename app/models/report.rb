@@ -21,6 +21,20 @@ class Report
   validates :description, presence: true
   validates :coordinates, presence: true
 
+  # Callbacks
+  before_create :find_municipality
+  after_create :bitch
+
+  def find_municipality
+    self.municipality = MunicipalityFinder.find_municipality(self.coordinates)
+  end
+
+  def bitch
+    if self.municipality.try(:driver)
+      self.municipality.driver.new(@report).notify
+    end
+  end
+
 
   def lixo
 
