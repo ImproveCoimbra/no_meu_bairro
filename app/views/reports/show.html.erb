@@ -9,9 +9,6 @@
 <p>
   <b>Coordinates:</b>
   <%= @report.coordinates %>
-
-
-
 </p>
 
 <div id="map_canvas" style="width:50%; height:50%"></div>
@@ -20,9 +17,12 @@
     initialize_map('map_canvas' ,<%= @report.coordinates[1] %>, <%= @report.coordinates[0] %>);
 </script>
 
-<% @report.images.to_a.each do |image| %>
-    <%= image_tag(url_for({:controller => 'report_images', :action => 'show', :id => image})) %>
+<% @report.photos.each do |p| %>
+  <p>
+    <%= link_to p.attachment.url do %>
+      <%= image_tag p.attachment.url(:medium) %>
+    <% end %>
+  </p>
 <% end %>
-
 
 <%= link_to 'Back', reports_path %>

@@ -7,16 +7,16 @@ class Report
 
   field :description, type: String
   field :coordinates, type: Array
-  field :images, type: Array
   field :closure_date, type: DateTime
-
 
   index({ coordinates: "2d" })
 
   ##I have to belong to a user
   belongs_to :user
   belongs_to :municipality
-  embeds_many :photos, :class_name => "ReportPhoto"
+  embeds_many :photos, :class_name => "ReportPhoto", :cascade_callbacks => true
+
+  accepts_nested_attributes_for :photos
 
   validates :description, presence: true
   validates :coordinates, presence: true

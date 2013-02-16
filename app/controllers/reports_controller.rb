@@ -33,6 +33,7 @@ class ReportsController < ApplicationController
   # GET /reports/new.json
   def new
     @report = Report.new
+    @report.photos.build
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,7 +1,4 @@
-<%= form_for(@report) do |f| %>
-
-
-
+<%= form_for(@report, html: { multipart: true }) do |f| %>
 
     <% if @report.errors.any? %>
         <div id="error_explanation">
@@ -20,10 +17,14 @@
       <br/>
       <%= f.text_field :description %>
     </div>
+
     <div class="field">
-      <%= f.label :images %>
-      <br/>
-      <input type="file" accept="image/*" capture="camera" name="images"/>
+      <%= f.label :photos %>
+      <br>
+      <%= f.fields_for :photos do |photo_builder| %>
+        <%= render 'photo_fields', :pf => photo_builder %>
+      <% end %>
+      <p><%= link_to_add_fields "Adicionar Foto", f, :photos %></p>
     </div>
 
     <input type="hidden" name="report[coordinates][]" id="longitude" value=""/>
