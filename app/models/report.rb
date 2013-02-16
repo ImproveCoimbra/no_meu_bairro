@@ -15,8 +15,8 @@ class Report
 
   ##I have to belong to a user
   belongs_to :user
-
   belongs_to :municipality
+  embeds_many :photos, :class_name => "ReportPhoto"
 
   validates :description, presence: true
   validates :coordinates, presence: true

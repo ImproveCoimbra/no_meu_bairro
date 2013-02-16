@@ -41,45 +41,12 @@ class ReportsController < ApplicationController
     #@report.municipality=MunicipalityFinder.find_municipality(@report.coordinates)
     #@report.images = []
     
-    #Save images
-    save_request_images()
-
     respond_to do |format|
       if @report.save
         format.html { redirect_to @report, notice: 'Report was successfully created.' }
         format.json { render json: @report, status: :created, location: @report }
       else
         format.html { render action: "new" }
-        format.json { render json: @report.errors, status: :unprocessable_entity }
-      end
-    end
-
-  end
-
-  def save_request_images
-    i=1
-    while params["file#{i}"] != nil do
-      uploaded_io = params["file#{i}"]
-      final_image_name = "#{@report._id}-#{i}#{File.extname(uploaded_io.original_filename)}"
-      @report.images << final_image_name
-      File.open(Rails.root.join('public', 'uploads', final_image_name), 'wb') do |file|
-        file.write(uploaded_io.read)
-      end
-      i+=1
-    end
-  end
-
-  # PUT /reports/1
-  # PUT /reports/1.json
-  def update
-    @report = Report.find(params[:id])
-
-    respond_to do |format|
-      if @report.update_attributes(params[:report])
-        format.html { redirect_to @report, notice: 'Report was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
         format.json { render json: @report.errors, status: :unprocessable_entity }
       end
     end
