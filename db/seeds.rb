@@ -9,4 +9,4 @@
 
 Municipality.create(ost_id: 379,
                     name: "Coimbra",
-                    driver: "CoimbraPortugalBitchingDriver")
+                    driver_str: "CoimbraPortugalBitchingDriver")
