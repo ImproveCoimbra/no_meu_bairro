@@ -1,5 +1,6 @@
 class Municipality
   include Mongoid::Document
+  include Mongoid::Timestamps
 
   store_in collection: "municipalities"
 

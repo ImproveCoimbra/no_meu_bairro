@@ -1,15 +1,15 @@
 class Report
   include Mongoid::Document
+  include Mongoid::Paranoia
+  include Mongoid::Timestamps
 
   store_in collection: "reports"
 
   field :description, type: String
   field :coordinates, type: Array
   field :images, type: Array
-  field :create_date, type: DateTime
   field :closure_date, type: DateTime
-  # We do not deleted a record. But we mark it as deleted and do not return it
-  field :deleted_date, type:DateTime
+
 
   index({ coordinates: "2d" })
 
@@ -20,13 +20,7 @@ class Report
 
   validates :description, presence: true
   validates :coordinates, presence: true
-  validates :create_date, presence: true
 
-
-  def initialize()
-      super()
-      self.create_date = DateTime.now
-  end
 
   def lixo
 

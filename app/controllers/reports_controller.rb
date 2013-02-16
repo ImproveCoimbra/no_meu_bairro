@@ -7,12 +7,9 @@ class ReportsController < ApplicationController
     if params["mine"] !=nil && params["mine"].to_bool
       @reports = Report.where(
           :user => User.find_by(:uuid => request.headers["Bitching-Client"]),
-          :deleted_date.exists => false
       )
     else
-      @reports = Report.where(
-          :deleted_date.exists => false
-      )
+      @reports = Report.all
     end
     respond_to do |format|
       format.html # index.html.erb
@@ -24,8 +21,7 @@ class ReportsController < ApplicationController
   # GET /reports/1.json
   def show
 
-    @report = Report.find_by("_id" => params[:id],
-                           :deleted_date.exists => false)
+    @report = Report.find_by("_id" => params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -36,9 +32,7 @@ class ReportsController < ApplicationController
   # GET /reports/1/edit
   def edit
     @report = Report.find_by("_id" => params[:id],
-                           :user => User.find_by(:uuid => request.headers["Bitching-Client"]),
-                           :deleted_date.exists => false
-    )
+                           :user => User.find_by(:uuid => request.headers["Bitching-Client"]))
   end
 
 
@@ -128,13 +122,11 @@ class ReportsController < ApplicationController
   def destroy
 
     @report = Report.find_by("_id" => params[:id],
-                           :user => User.find_by(:uuid => request.headers["Bitching-Client"]),
-                           :deleted_date.exists => false)
+                           :user => User.find_by(:uuid => request.headers["Bitching-Client"]))
 
     if @report != nil
 
-      @report.deleted_date = DateTime.now
-      @report.save
+      @report.destroy
 
       respond_to do |format|
         #format.html { redirect_to reports_url }
