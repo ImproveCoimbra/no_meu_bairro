@@ -1,25 +1,56 @@
 <%= form_for(@report) do |f| %>
-  <% if @report.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
 
-      <ul>
-      <% @report.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+
+
+
+    <% if @report.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
+
+          <ul>
+            <% @report.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :description %>
+      <br/>
+      <%= f.text_field :description %>
     </div>
-  <% end %>
+    <div class="field">
+      <%= f.label :images %>
+      <br/>
+      <input type="file" accept="image/*" capture="camera" name="images"/>
+    </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :exclusive %><br />
-    <%= f.check_box :exclusive %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <input type="hidden" name="report[coordinates][]" id="longitude" value=""/>
+    <input type="hidden" name="report[coordinates][]" id="latitude" value=""/>
+
+    <script type="text/javascript">
+
+
+        function findLocation() {
+            navigator.geolocation.getCurrentPosition(foundLocation, noLocation);
+        }
+        function foundLocation(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            document.getElementById('latitude').value = latitude;
+            document.getElementById('longitude').value = longitude;
+            alert(latitude + " " + longitude);
+        }
+        function noLocation() {
+            alert('Não foi possível validar a localização');
+        }
+        findLocation();
+
+
+    </script>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

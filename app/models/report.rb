@@ -22,8 +22,12 @@ class Report
   validates :coordinates, presence: true
 
   # Callbacks
-  before_create :find_municipality
+  before_create :find_municipality, :convert_location
   after_create :bitch
+
+  def convert_location
+    self.coordinates.map!{|c| c.to_f}
+  end
 
   def find_municipality
     self.municipality = MunicipalityFinder.find_municipality(self.coordinates)
@@ -31,7 +35,7 @@ class Report
 
   def bitch
     if self.municipality.try(:driver)
-      self.municipality.driver.new(@report).notify
+      self.municipality.driver.new(self).notify
     end
   end
 

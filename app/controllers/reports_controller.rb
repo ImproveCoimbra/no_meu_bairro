@@ -29,6 +29,17 @@ class ReportsController < ApplicationController
     end
   end
 
+  # GET /reports/new
+  # GET /reports/new.json
+  def new
+    @report = Report.new
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @report }
+    end
+  end
+
   # POST /reports
   # POST /reports.json
   def create
@@ -37,7 +48,7 @@ class ReportsController < ApplicationController
 
     #@report.user = @user
     #@report.description=json_report["report"]["description"]
-    @report.coordinates = [json_report["report"]["coordinates"][0], json_report["report"]["coordinates"][1]]
+    #@report.coordinates = [json_report["report"]["coordinates"][0], json_report["report"]["coordinates"][1]]
     #@report.municipality=MunicipalityFinder.find_municipality(@report.coordinates)
     #@report.images = []
     
