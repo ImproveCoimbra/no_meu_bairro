@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 class ReportsController < ApplicationController
   # GET /reports
   # GET /reports?mine=true
@@ -49,7 +51,7 @@ class ReportsController < ApplicationController
     
     respond_to do |format|
       if @report.save
-        format.html { redirect_to @report, notice: 'Relat&aacute;rio criado correctamente.' }
+        format.html { redirect_to @report, notice: 'Relatório criado correctamente.' }
         format.json { render json: @report, status: :created, location: @report }
       else
         format.html { render action: "new" }
