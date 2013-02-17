@@ -2,7 +2,7 @@
 jQuery(function ($) {
   "use strict";
 
-  if ($("#home").length == 0) { return; }
+  if ($("#home").length == 0) { return; } // Only run on homepage
 
   var jQueryCache, headerHeight, footerHeight, ajdustSize, lastHeight;
 
@@ -36,5 +36,23 @@ jQuery(function ($) {
 
   //Probably we should throtle this
   jQueryCache.window.bind('resize', ajdustSize);
+
+  // Map Load callback
+  Gmaps.map.callback = function() {
+
+    for (var i = 0; i <  this.markers.length; ++i) {
+      var marker = Gmaps.map.markers[i];
+
+      var onMarkerClick = function onMarkerClick(marker, event){
+        return function(event){
+          window.open(marker.link, '_blank');
+          window.focus();
+        }
+      }
+
+      // Click on marker to open show view
+      google.maps.event.addListener(marker.serviceObject, 'click', onMarkerClick(marker, event));
+    }
+  };
 
 });
