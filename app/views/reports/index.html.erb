@@ -3,8 +3,7 @@
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
-      <th>Description</th>
-      <th>Coordinates</th>
+      <th>Descrição</th>
       <th></th>
     </tr>
   </thead>
@@ -13,7 +12,6 @@
     <% @reports.each do |report| %>
       <tr>
         <td><%= report.description %></td>
-        <td><%= report.coordinates %></td>
         <td><%= link_to 'Mais informações', report %></td>
       </tr>
     <% end %>
