@@ -11,11 +11,11 @@
   <%= @report.coordinates %>
 </p>
 
-<div id="map_canvas" style="width:50%; height:50%"></div>
-
-<script type="text/javascript">
-    initialize_map('map_canvas' ,<%= @report.coordinates[1] %>, <%= @report.coordinates[0] %>);
-</script>
+<%= gmaps({
+    :map_options => { :auto_zoom => false, :zoom => 15 },
+    :markers     => { :data  => @report.to_gmaps4rails },
+  })
+%>
 
 <% @report.photos.each do |p| %>
   <p>

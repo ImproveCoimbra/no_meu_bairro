@@ -14,7 +14,7 @@ gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
 gem 'aws-s3',            :require => 'aws/s3'
 gem 'aws-sdk'
 
-gem 'jquery-rails'
+gem 'jquery-rails', '2.1.4'
 
 gem "mimetype-fu", :require => 'mimetype_fu'
-gem 'httparty'
+gem 'gmaps4rails'

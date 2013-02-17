@@ -30,26 +30,6 @@
     <input type="hidden" name="report[coordinates][]" id="longitude" value=""/>
     <input type="hidden" name="report[coordinates][]" id="latitude" value=""/>
 
-    <script type="text/javascript">
-
-
-        function findLocation() {
-            navigator.geolocation.getCurrentPosition(foundLocation, noLocation);
-        }
-        function foundLocation(position) {
-            var latitude = position.coords.latitude;
-            var longitude = position.coords.longitude;
-            document.getElementById('latitude').value = latitude;
-            document.getElementById('longitude').value = longitude;
-        }
-        function noLocation() {
-            alert('Não foi possível validar a localização');
-        }
-        findLocation();
-
-
-    </script>
-
     <div class="actions">
       <%= f.submit %>
     </div>

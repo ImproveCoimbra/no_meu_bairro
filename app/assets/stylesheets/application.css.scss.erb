@@ -14,34 +14,66 @@
  */
 
 body {
+}
 
+h1, h2 {
+  font-family: 'Arbutus Slab', serif;
+  font-weight: normal;
+  text-align: center;
+}
+
+h1, h1 a {
+  color: #A84038;
+}
+
+h2 {
+  font-size: 50px;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 header {
+  background-color: #D1E8F0;
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
+  box-shadow: inset 0 -1px 3px rgba(0, 0, 0, 0.3);
   h1 {
-    font-family: 'Arvo', serif;
-    color: #A84038;
+    font-size: 32px;
+    a:hover, a:active, a:visited {
+      color: #A84038;
+    }
   }
 }
 
-header#home {
-  padding: 40px 0;
-  h1 {
-    font-size: 80px;
-    line-height: 80px;
-    margin-bottom: 40px;
+#home {
+  header {
+    padding: 40px 0;
+    h1 {
+      font-size: 80px;
+      line-height: 80px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 31.5px;
+      margin-bottom: 20px;
+    }
   }
-  h2 {
-    margin-bottom: 40px;
+
+  #map {
+    width: 100%;
+    height: 300px;
   }
+
+  .map_container {
+    width: 100%;
+  }
+
 }
 
 footer {
   padding: 20px 0;
   text-align: center;
-  a {
+  a, a:hover, a:visited, a:active {
     color: gray;
   }
 }

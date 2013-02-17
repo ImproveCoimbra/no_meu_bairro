@@ -46,12 +46,6 @@ class ReportsController < ApplicationController
   def create
     #requested_uuid = request.headers[CLIENT_IDENTIFIER_KEY]
     @report = Report.new(params[:report])
-
-    #@report.user = @user
-    #@report.description=json_report["report"]["description"]
-    #@report.coordinates = [json_report["report"]["coordinates"][0], json_report["report"]["coordinates"][1]]
-    #@report.municipality=MunicipalityFinder.find_municipality(@report.coordinates)
-    #@report.images = []
     
     respond_to do |format|
       if @report.save
