@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>O meu bairro</title>
+  <meta name="description" content="Ajuda a resolver os problemas do teu bairro.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag "application", :media => "all" %>
   <link href='http://fonts.googleapis.com/css?family=Arbutus+Slab' rel='stylesheet' type='text/css'>
@@ -13,16 +14,16 @@
     <%= yield :contents %>
   <% else %>
     <header>
-      <div class="container">
-        <div class="row">
+      <div class="container-fluid">
+        <div class="row-fluid">
           <div class="span12">
             <h1><a href="/">O meu bairro</a></h1>
           </div>
         </div>
       </div>
     </header>
-    <div class="container">
-      <div class="row">
+    <div class="container-fluid">
+      <div class="row-fluid">
         <div class="span12">
           <%= yield %>
         </div>
@@ -31,8 +32,8 @@
   <% end %>
 
   <footer>
-    <div class="container">
-      <div class="row">
+    <div class="container-fluid">
+      <div class="row-fluid">
         <div class="span12">
           <p><a href="http://improve.madeincoimbra.org">Made in Improve Coimbra</a></p>
         </div>

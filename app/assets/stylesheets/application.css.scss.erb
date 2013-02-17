@@ -84,10 +84,43 @@ header {
   }
 }
 
+.form-horizontal {
+  textarea {
+    width: auto;
+  }
+}
+
 footer {
   padding: 20px 0;
   text-align: center;
   a, a:hover, a:visited, a:active {
     color: gray;
   }
+}
+
+// Responsive
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 35px;
+    line-height: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  #home {
+    header {
+      h1 {
+        font-size: 40px;
+        line-height: 40px;
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 25px;
+        line-height: 30px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
 }

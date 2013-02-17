@@ -17,7 +17,7 @@
         <%= f.fields_for :photos do |photo_builder| %>
           <%= render 'photo_fields', :pf => photo_builder %>
         <% end %>
-        <p><%= link_to_add_fields "Adicionar Foto", f, :photos %></p>
+        <br/><%= link_to_add_fields "Adicionar outra foto", f, :photos %>
       </div>
     </div>
 
