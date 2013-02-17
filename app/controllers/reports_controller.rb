@@ -7,9 +7,9 @@ class ReportsController < ApplicationController
     if params[:mine].try(:to_bool)
       @reports = Report.where(
           :user => User.find_by(:uuid => request.headers[CLIENT_IDENTIFIER_KEY])
-      )
+      ).desc(:created_at)
     else
-      @reports = Report.all
+      @reports = Report.all.desc(:created_at)
     end
 
     respond_to do |format|
@@ -49,7 +49,7 @@ class ReportsController < ApplicationController
     
     respond_to do |format|
       if @report.save
-        format.html { redirect_to @report, notice: 'Report was successfully created.' }
+        format.html { redirect_to @report, notice: 'Relat&aacute;rio criado correctamente.' }
         format.json { render json: @report, status: :created, location: @report }
       else
         format.html { render action: "new" }

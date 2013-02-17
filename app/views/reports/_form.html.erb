@@ -2,7 +2,7 @@
 
     <% if @report.errors.any? %>
         <div id="error_explanation" class="alert alert-error">
-          <p><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
+          <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
           <ul>
             <% @report.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
@@ -28,7 +28,8 @@
       </div>
     </div>
 
-    <p>Nota: A tua localização foi recolhida automaticamente.</p>
+    <p>
+    <div id="status_message"></div></p>
 
     <input type="hidden" name="report[coordinates][]" id="longitude" value=""/>
     <input type="hidden" name="report[coordinates][]" id="latitude" value=""/>
