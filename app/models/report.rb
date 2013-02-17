@@ -24,6 +24,9 @@ class Report
   validates :coordinates, presence: true
   validate :validate_coordinates_format
 
+  # Gmaps4Rails
+  acts_as_gmappable :process_geocoding => false
+
   # Callbacks
   before_create :find_municipality, :convert_location
   after_create :bitch
@@ -42,6 +45,17 @@ class Report
     rescue
       errors.add(:coordinates, "tem um formato inválido")
     end
+  end
+
+
+  # Methods
+
+  def latitude
+    coordinates[1] if coordinates
+  end
+
+  def longitude
+    coordinates[0] if coordinates
   end
 
   def find_municipality

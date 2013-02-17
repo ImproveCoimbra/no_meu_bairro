@@ -1,0 +1,30 @@
+.bing_map {
+  position: absolute;
+  top: 20;
+  left: 10;
+  width: 400px;
+  height: 400px;
+  border:#555555 2px solid;
+}
+
+/* Gmaps4rails + Bootstrap controllers fix */
+
+#map img { max-width: none; }
+#map label { width: auto; display:inline; }
+
+/* Gmaps4rails Customizations */
+
+.map_container {
+  padding: 0px;
+  border-width: 0px;
+  width: 100%;
+
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
+.map_container .gmaps4rails_map {
+  width: 600px;
+  height: 300px;
+}

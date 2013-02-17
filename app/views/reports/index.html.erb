@@ -19,6 +19,10 @@
 <% end %>
 </table>
 
-<br />
+<br>
 
 <%= link_to 'New Report', new_report_path %>
+
+<br><br>
+
+<%= gmaps4rails(@reports.to_gmaps4rails) %>
