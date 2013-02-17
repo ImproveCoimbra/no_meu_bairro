@@ -1,28 +1,39 @@
+<h2>Problema</h2>
 
-<p id="notice"><%= notice %></p>
+<div id="problem" class="row">
+  <div class="span6 offset3">
 
-<p>
-  <b>Description:</b>
-  <%= @report.description %>
-</p>
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Coordinates:</b>
-  <%= @report.coordinates %>
-</p>
+    <dl>
+      <dt>Descrição</dt>
+      <dd><%= @report.description %></dd>
+      <dt>Localização</dt>
+      <dd>
+        <%= gmaps({
+            :map_options => { :auto_zoom => false, :zoom => 15 },
+            :markers     => { "data"  => @report.to_gmaps4rails },
+          })
+        %>
+        <br/><small><%= @report.coordinates %></small>
+      </dd>
+    </dl>
 
-<%= gmaps({
-    :map_options => { :auto_zoom => false, :zoom => 15 },
-    :markers     => { :data  => @report.to_gmaps4rails },
-  })
-%>
+    <h3>Fotos</h3>
 
-<% @report.photos.each do |p| %>
-  <p>
-    <%= link_to p.attachment.url do %>
-      <%= image_tag p.attachment.url(:medium) %>
-    <% end %>
-  </p>
-<% end %>
+    <ul class="thumbnails">
+      <% @report.photos.each do |p| %>
+        <li class="span3">
+          <%= link_to p.attachment.url, :class => 'thumbnail' do %>
+            <%= image_tag p.attachment.url(:medium) %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
 
-<%= link_to 'Back', reports_path %>
+    <p>
+      <%= link_to 'Voltar', reports_path, :class => 'btn' %>
+    </p>
+
+  </div>
+</div>

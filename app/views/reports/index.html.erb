@@ -1,27 +1,28 @@
-<h2>Listing reports</h2>
+<h2>Problemas reportados</h2>
 
-<table>
-  <tr>
-    <th>Description</th>
-    <th>Coordinates</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Coordinates</th>
+      <th></th>
+    </tr>
+  </thead>
 
-<% @reports.each do |report| %>
-  <tr>
-    <td><%= report.description %></td>
-    <td><%= report.coordinates %></td>
-    <td><%= link_to 'Show', report %></td>
-
-  </tr>
-<% end %>
+  <tbody>
+    <% @reports.each do |report| %>
+      <tr>
+        <td><%= report.description %></td>
+        <td><%= report.coordinates %></td>
+        <td><%= link_to 'Mais informações', report %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Report', new_report_path %>
+<%= link_to 'Reportar novo problema', new_report_path, :class => 'btn btn-danger' %>
 
 <br><br>
 
