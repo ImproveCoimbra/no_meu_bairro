@@ -18,3 +18,7 @@ gem 'jquery-rails', '2.1.4'
 
 gem "mimetype-fu", :require => 'mimetype_fu'
 gem 'gmaps4rails'
+
+gem 'httparty'
+
+gem 'therubyracer'
