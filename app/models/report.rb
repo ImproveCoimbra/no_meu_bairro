@@ -68,7 +68,7 @@ class Report
 
   def bitch
     if self.municipality.try(:driver)
-      self.municipality.driver.new(self).notify
+      self.municipality.driver.new(self).notify rescue nil
     end
   end
 
