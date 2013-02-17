@@ -50,6 +50,10 @@ class Report
 
   # Methods
 
+  def as_json(ctx)
+    super(:include => { :photos => { :only => [:_id], :methods => :styles }})
+  end
+
   def latitude
     coordinates[1] if coordinates
   end

@@ -6,4 +6,8 @@ class ReportPhoto
 
   has_mongoid_attached_file :attachment, :styles => { :thumb => "40x40#", :small => "100x100#", :medium => "400x400>" }
   attr_accessible :attachment
+
+  def styles
+    Hash[ (self.attachment.styles.keys + [:original]).map{|style| [style, self.attachment.url(style)]} ]
+  end
 end
