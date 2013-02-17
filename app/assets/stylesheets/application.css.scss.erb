@@ -8,6 +8,40 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require_tree ./lib
  *= require_self
  *= require_tree .
  */
+
+body {
+
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+  h1 {
+    font-family: 'Arvo', serif;
+    color: #A84038;
+  }
+}
+
+header#home {
+  padding: 40px 0;
+  h1 {
+    font-size: 80px;
+    line-height: 80px;
+    margin-bottom: 40px;
+  }
+  h2 {
+    margin-bottom: 40px;
+  }
+}
+
+footer {
+  padding: 20px 0;
+  text-align: center;
+  a {
+    color: gray;
+  }
+}

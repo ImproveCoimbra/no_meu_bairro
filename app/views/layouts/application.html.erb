@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bitchingserver</title>
+  <title>No Bairro</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <link href='http://fonts.googleapis.com/css?family=Arvo:700' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
-  <script type="text/javascript"
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw4ycMMk-Lu2TsEpSp-AuAfVZHuODmUQM&sensor=true">
-  </script>
-
 </head>
 <body>
 
-<%= yield %>
+  <% if params[:controller] != 'front' %>
+    <header>
+      <div class="container">
+        <h1><a href="/">No Bairro</a></h1>
+      </div>
+    </header>
+  <% end %>
+
+  <%= yield %>
+
+  <footer>
+    <div class="container">
+      <p><a href="http://improve.madeincoimbra.org">Made in Improve Coimbra</a></p>
+    </div>
+  </footer>
+
+  <%= javascript_include_tag "application" %>
+  <script type="text/javascript"
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw4ycMMk-Lu2TsEpSp-AuAfVZHuODmUQM&sensor=true">
+  </script>
 
 </body>
 </html>
