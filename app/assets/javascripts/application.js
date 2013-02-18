@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require_tree ./lib
 //= require_tree .
+
+// Style for Maps
+var myStyle = [
+    {
+        "stylers": [
+            { "hue": "#D1E8F0" },
+            { "saturation": -40 }
+        ]
+    }
+];

@@ -14,7 +14,7 @@
     </div>
   </header>
 
-  <%= gmaps(:markers => { "data" => @reports }, :map_options => { :container_class => 'map-container hidden-phone' }) %>
+  <%= gmaps(:markers => { "data" => @reports }, :map_options => { :container_class => 'map-container hidden-phone', :raw => "{styles: myStyle}"  }) %>
 
 </div>
 

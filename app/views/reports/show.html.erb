@@ -11,7 +11,7 @@
       <dt>Localização</dt>
       <dd>
         <%= gmaps({
-            :map_options => { :auto_zoom => false, :zoom => 15 },
+            :map_options => { :auto_zoom => false, :zoom => 15, :raw => "{styles: myStyle}" },
             :markers     => { "data"  => @report.to_gmaps4rails },
           })
         %>
