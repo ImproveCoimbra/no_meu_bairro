@@ -48,10 +48,10 @@ class ReportsController < ApplicationController
     #requested_uuid = request.headers[CLIENT_IDENTIFIER_KEY]
     @report = Report.new(params[:report])
 
-    if request.env["HTTP_X_FORWARDED_FOR"] ==nil || request.env["HTTP_X_FORWARDED_FOR"].empty
-      @report.client_ip = request.remote_ip
-    else
+    if request.env["HTTP_X_FORWARDED_FOR"].present?
       @report.client_ip = request.env["HTTP_X_FORWARDED_FOR"]
+    else
+      @report.client_ip = request.remote_ip
     end
 
     respond_to do |format|
