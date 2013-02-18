@@ -7,7 +7,7 @@
 <h1>Problema reportado: <%= @report.description %></h1>
 
 <p>
-  Para consultar mais informação: <%= @url %>.
+  Para consultar mais informação:  <%= link_to 'Relatório', report_url(@report) %>  .
 </p>
 
 </body>

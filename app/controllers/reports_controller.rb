@@ -5,7 +5,6 @@ class ReportsController < ApplicationController
   # GET /reports?mine=true
   # GET /reports.json
   def index
-
     if params[:mine].try(:to_bool)
       @reports = Report.where(
           :user => User.find_by(:uuid => request.headers[CLIENT_IDENTIFIER_KEY])
@@ -48,7 +47,13 @@ class ReportsController < ApplicationController
   def create
     #requested_uuid = request.headers[CLIENT_IDENTIFIER_KEY]
     @report = Report.new(params[:report])
-    
+
+    if request.env["HTTP_X_FORWARDED_FOR"] ==nil || request.env["HTTP_X_FORWARDED_FOR"].empty
+      @report.client_ip = request.remote_ip
+    else
+      @report.client_ip = request.env["HTTP_X_FORWARDED_FOR"]
+    end
+
     respond_to do |format|
       if @report.save
         format.html { redirect_to @report, notice: 'Relatório criado correctamente.' }
