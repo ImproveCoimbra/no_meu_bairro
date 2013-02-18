@@ -11,7 +11,7 @@
         </div>
     <% end %>
 
-    <div class="control-group">
+    <div class="control-group" id="photos-div">
       <%= f.label :photos, "Foto(s)", :class => 'control-label' %>
       <div class="controls">
         <%= f.fields_for :photos do |photo_builder| %>
@@ -20,6 +20,13 @@
         <br/><%= link_to_add_fields "Adicionar outra foto", f, :photos %>
       </div>
     </div>
+    <div class="control-group" id="no-photos-div" hidden="true">
+      <%= f.label :photos, "Foto(s)", :class => 'control-label' %>
+      <div class="controls">
+        Não existe suporte para envio de imagens com o seu browser!
+      </div>
+    </div>
+
 
     <div class="control-group">
       <%= f.label :description, "Descrição", :class => 'control-label' %>
