@@ -59,6 +59,7 @@ class ReportsController < ApplicationController
         format.html { redirect_to @report, notice: 'Relatório criado correctamente.' }
         format.json { render json: @report, status: :created, location: @report }
       else
+        @report.photos.build if @report.photos.empty?
         format.html { render action: "new" }
         format.json { render json: @report.errors, status: :unprocessable_entity }
       end
