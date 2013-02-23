@@ -13,11 +13,12 @@ $(document).ready(function () {
         var longitude = position.coords.longitude;
         document.getElementById('latitude').value = latitude;
         document.getElementById('longitude').value = longitude;
+        //TODO Localization
         document.getElementById('status_message').innerHTML = 'Nota: A sua localização foi recolhida automaticamente.'
     }
-
+    //TODO Localization
     function noLocation() {
-        document.getElementById('status_message').innerHTML = 'Não foi possível validar a localização.<br/> Verifice as definições do seu browser.'
+        document.getElementById('status_message').innerHTML = 'Não foi possível validar a localização.<br/> Verifique as definições do seu browser.'
     }
 
     if ($('form#new_report').length > 0) {

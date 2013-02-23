@@ -1,0 +1,16 @@
+
+pt:
+  send: "Enviar"
+  back: "Voltar"
+
+  description: "Descrição"
+  location: "Localização"
+  problem_details_description: "Detalhes sobre o problema..."
+
+  photo_or_photos: "Foto(s)"
+  add_another_photo: "Adicionar Foto"
+  no_browser_support_for_image_upload: "Lamentamos mas o seu browser não suporta envio de imagens."
+  error: "Erro"
+  stopped_report_from_save: "impediram que este relatório fosse guardado"
+  photo: "Foto"
+  remove: "Remover"

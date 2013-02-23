@@ -2,4 +2,15 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  add_another_photo: "Add Photo"
+  photo_or_photos: "Photo(s)"
+  no_browser_support_for_image_upload: "We are sorry but your browser does not support image upload."
+  description: "Description"
+  location: "Location"
+  problem_details_description: "Detailed description of problem"
+  send: "Send"
+  back: "Back"
+  error: "Error"
+  stopped_report_from_save: "stoped report from being saved"
+  photo: "Photo"
+  remove: "Remove"

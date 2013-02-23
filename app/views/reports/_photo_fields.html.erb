@@ -4,7 +4,7 @@
 <% else %>
   <%#= pf.label :attachment %>
   <%= image_tag pf.object.attachment.url(:thumb) %>
-  <%= pf.label :_destroy, 'Remover' %>
+  <%= pf.label :_destroy, t(:remove) %>
   <%= pf.check_box :_destroy %>
 <% end %>
 <br>

@@ -6,9 +6,9 @@
     <p id="notice"><%= notice %></p>
 
     <dl>
-      <dt>Descrição</dt>
+      <dt><%= t(:description) %></dt>
       <dd><%= @report.description %></dd>
-      <dt>Localização</dt>
+      <dt><%= t(:location) %></dt>
       <dd>
         <%= gmaps({
             :map_options => { :auto_zoom => false, :zoom => 15, :raw => "{styles: myStyle}" },
@@ -20,7 +20,7 @@
       </dd>
     </dl>
 
-    <h3>Fotos</h3>
+    <h3><%= pluralize(2, t(:photo)) %></h3>
 
     <ul class="thumbnails">
       <% @report.photos.each do |p| %>

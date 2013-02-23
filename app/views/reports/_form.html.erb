@@ -2,7 +2,7 @@
 
     <% if @report.errors.any? %>
         <div id="error_explanation" class="alert alert-error">
-          <p><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</p>
+          <p><%= pluralize(@report.errors.count, t(:error)) %> <%= t(:stopped_report_from_save) %>:</p>
           <ul>
             <% @report.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
@@ -12,26 +12,26 @@
     <% end %>
 
     <div class="control-group" id="photos-div">
-      <%= f.label :photos, "Foto(s)", :class => 'control-label' %>
+      <%= f.label :photos, t(:photo_or_photos), :class => 'control-label' %>
       <div class="controls">
         <%= f.fields_for :photos do |photo_builder| %>
           <%= render 'photo_fields', :pf => photo_builder %>
         <% end %>
-        <br/><%= link_to_add_fields "Adicionar outra foto", f, :photos %>
+        <br/><%= link_to_add_fields t(:add_another_photo), f, :photos %>
       </div>
     </div>
     <div class="control-group" id="no-photos-div" hidden="true">
-      <%= f.label :photos, "Foto(s)", :class => 'control-label' %>
+      <%= f.label :photos, t(:photo_or_photos), :class => 'control-label' %>
       <div class="controls">
-        Não existe suporte para envio de imagens com o seu browser!
+        <%= t :no_browser_support_for_image_upload %>
       </div>
     </div>
 
 
     <div class="control-group">
-      <%= f.label :description, "Descrição", :class => 'control-label' %>
+      <%= f.label :description, t(:description), :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_area :description, :rows => 3, :placeholder => 'Detalhes sobre o problema...' %>
+        <%= f.text_area :description, :rows => 3, :placeholder => t(:problem_details_description) %>
       </div>
     </div>
 
@@ -43,8 +43,8 @@
     <input type="hidden" name="report[coordinates][]" id="latitude" value=""/>
 
     <div class="form-actions">
-      <%= f.submit "Enviar", :class => 'btn btn-danger btn-large' %>
-      <%= link_to 'Voltar', root_path, :class => 'btn' %>
+      <%= f.submit t(:send), :class => 'btn btn-danger btn-large' %>
+      <%= link_to t(:back), root_path, :class => 'btn' %>
     </div>
 
 <% end %>
