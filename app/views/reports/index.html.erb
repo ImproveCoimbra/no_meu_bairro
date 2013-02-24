@@ -1,9 +1,9 @@
-<h2>Problemas reportados</h2>
+<h2><%= t(:reported_problems) %></h2>
 
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
-      <th>Descrição</th>
+      <th><%= t(:description) %></th>
       <th></th>
     </tr>
   </thead>
@@ -12,7 +12,7 @@
     <% @reports.each do |report| %>
       <tr>
         <td><%= report.description %></td>
-        <td><%= link_to 'Mais informações', report %></td>
+        <td><%= link_to t(:more_information), report %></td>
       </tr>
     <% end %>
   </tbody>
@@ -20,7 +20,7 @@
 
 <br>
 
-<%= link_to 'Reportar novo problema', new_report_path, :class => 'btn btn-danger' %>
+<%= link_to t(:report_new_problem), new_report_path, :class => 'btn btn-danger' %>
 
 <br><br>
 

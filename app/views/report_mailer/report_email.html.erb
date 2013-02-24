@@ -4,7 +4,7 @@
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
 </head>
 <body>
-<h1>Problema reportado: <%= @report.description %></h1>
+<p><b><%= t(:reported_problem) %>: <%= @report.description %></b></p>
 
 <p>
   Para consultar mais informação:  <%= link_to 'Relatório', report_url(@report) %>  .

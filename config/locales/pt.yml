@@ -1,5 +1,8 @@
 
 pt:
+
+  mongoid.errors.models.report.attributes.description.blank: "Cenas"
+
   send: "Enviar"
   back: "Voltar"
 
@@ -14,3 +17,20 @@ pt:
   stopped_report_from_save: "impediram que este relatório fosse guardado"
   photo: "Foto"
   remove: "Remover"
+  edit_report: "Editar relatório"
+  reported_problem: "Problema reportado no site 'O meu bairro'"
+  reported_problems: "Problemas reportados"
+  more_information: "Mais informação"
+  report_new_problem: "Reportar novo problema"
+  for_more_information_visit: "Para consultar mais informação visite"
+  app_name: "O meu bairro"
+  mission_statement: "Ajuda a resolver os problemas do teu bairro"
+
+
+  mongoid:
+    errors:
+      models:
+        report:
+          attributes:
+            description:
+              blank: A descrição de um relatório não pode ser vazia
