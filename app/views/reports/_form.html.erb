@@ -26,7 +26,12 @@
         <%= t :no_browser_support_for_image_upload %>
       </div>
     </div>
-
+    <div class="control-group">
+      <%= f.label :user, t(:email), :class => 'control-label' %>
+      <div class="controls">
+        <%= text_field :user, :uuid, :placeholder => t(:sample_mail) %>
+      </div>
+    </div>
 
     <div class="control-group">
       <%= f.label :description, t(:description), :class => 'control-label' %>

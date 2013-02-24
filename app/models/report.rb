@@ -12,6 +12,7 @@ class Report
   field :closure_date, type: DateTime
   field :client_ip, type: String
 
+
   index({ coordinates: "2d" })
 
   ##I have to belong to a user

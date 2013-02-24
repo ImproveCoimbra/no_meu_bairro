@@ -1,4 +1,4 @@
-<h2>Problema</h2>
+<h2><%= t(:problem)[0].capitalize %></h2>
 
 <div id="problem" class="row-fluid">
   <div class="span6 offset3">
@@ -20,7 +20,7 @@
       </dd>
     </dl>
 
-    <h3><%= pluralize(2, t(:photo)) %></h3>
+    <h3><%= t(:photo).pluralize(2) %></h3>
 
     <ul class="thumbnails">
       <% @report.photos.each do |p| %>
@@ -33,7 +33,7 @@
     </ul>
 
     <p>
-      <%= link_to 'Voltar', reports_path, :class => 'btn' %>
+      <%= link_to t(:back), reports_path, :class => 'btn' %>
     </p>
 
   </div>

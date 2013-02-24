@@ -47,6 +47,7 @@ class ReportsController < ApplicationController
   def create
     #requested_uuid = request.headers[CLIENT_IDENTIFIER_KEY]
     @report = Report.new(params[:report])
+    @report.user = User.find_or_create_by(params[:user])
 
     if request.env["HTTP_X_FORWARDED_FOR"].present?
       @report.client_ip = request.env["HTTP_X_FORWARDED_FOR"]
