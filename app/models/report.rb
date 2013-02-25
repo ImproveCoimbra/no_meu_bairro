@@ -11,6 +11,8 @@ class Report
   field :coordinates, type: Array
   field :closure_date, type: DateTime
   field :client_ip, type: String
+  field :token, type: String
+
 
 
   index({ coordinates: "2d" })
@@ -30,8 +32,18 @@ class Report
   acts_as_gmappable :process_geocoding => false
 
   # Callbacks
-  before_create :find_municipality, :convert_location
+  before_create :find_municipality, :convert_location, :generate_token
   after_create :bitch
+
+  def generate_token
+    token = SecureRandom.urlsafe_base64
+    while Report.where(:token => token).exists?
+      begin
+        token = SecureRandom.urlsafe_base64
+      end
+    end
+    self.token = token
+  end
 
   def convert_location
     self.coordinates.map! { |c| c.to_f }
@@ -53,7 +65,7 @@ class Report
   # Methods
 
   def as_json(ctx)
-    super(:include => { :photos => { :only => [:_id], :methods => :styles }})
+    super(:include => { :photos => { :only => [:_id], :methods => :styles }}, :except => [:client_ip, :token] )
   end
 
   def latitude
