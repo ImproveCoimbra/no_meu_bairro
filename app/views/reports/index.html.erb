@@ -5,7 +5,7 @@
     <tr>
       <th><%= t(:description) %></th>
       <th></th>
-      <th></th>
+      <!--<th></th>-->
     </tr>
   </thead>
 
@@ -14,7 +14,7 @@
       <tr>
         <td><%= report.description %></td>
         <td><%= link_to t(:more_information), report %></td>
-        <td><%= link_to t(:edit_report), edit_report_path(report, :token => report.token) %></td>
+        <!-- <td><%# link_to t(:edit_report), edit_report_path(report, :token => report.token) %></td> -->
       </tr>
     <% end %>
   </tbody>

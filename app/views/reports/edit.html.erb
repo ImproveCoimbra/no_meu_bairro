@@ -24,8 +24,9 @@
 
         <%= f.hidden_field :token %>
         <div class="form-actions">
-          <%= f.submit t(:mark_as_solved), :class => 'btn btn-danger btn-large' %>
-          <%= link_to t(:back), root_path, :class => 'btn' %>
+
+          <%= f.submit t(:mark_as_solved), :class => 'btn btn-danger btn-large' if @report.closure_date == nil %>
+          <%= link_to t(:back), :back, :class => 'btn' %>
         </div>
 
     <% end %>
