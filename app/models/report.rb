@@ -86,6 +86,10 @@ class Report
     end
   end
 
+  def mark_as_solved
+    self.closure_date = DateTime.now
+  end
+
   def lixo
     first_loc = [80.24958300000003, 13.060422]
     second_loc = [81.24958300000003, 12.060422]

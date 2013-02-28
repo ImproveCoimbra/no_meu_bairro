@@ -26,3 +26,5 @@ en:
   sample_mail: "john77@gmail.com"
   problem: "problem"
   mark_as_solved: "Mark as soved"
+  update_report: "Report updated."
+  created_report: "Report created."

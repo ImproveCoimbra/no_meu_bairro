@@ -22,6 +22,7 @@
 
     <%= form_for(@report, :html => {:multipart => true, :class => 'form-horizontal'}) do |f| %>
 
+        <%= f.hidden_field :token %>
         <div class="form-actions">
           <%= f.submit t(:mark_as_solved), :class => 'btn btn-danger btn-large' %>
           <%= link_to t(:back), root_path, :class => 'btn' %>

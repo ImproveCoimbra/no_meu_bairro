@@ -57,7 +57,7 @@ class ReportsController < ApplicationController
 
     respond_to do |format|
       if @report.save
-        format.html { redirect_to @report, notice: 'Relatório criado correctamente.' }
+        format.html { redirect_to @report, notice: t(:created_report) }
         format.json { render json: @report, status: :created, location: @report }
       else
         @report.photos.build if @report.photos.empty?
@@ -75,7 +75,17 @@ class ReportsController < ApplicationController
   # PUT /reports/1
   # PUT /reports/1.json
   def update
-    @report = Report.find_by(:id => params[:id], :token => params[:token])
+    @report = Report.find_by(:id => params[:id], :token => params[:report][:token])
+    @report.mark_as_solved
+    @report.save
+    respond_to do |format|
+      if @report.save
+        format.html { redirect_to @report, notice: t(:update_report) }
+        format.json { render json: @report.errors, status: :unprocessable_entity }
+      else
+        # TODO
+      end
+    end
   end
 
 end
