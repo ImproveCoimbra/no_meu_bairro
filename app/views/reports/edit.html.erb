@@ -3,7 +3,32 @@
 <div class="row-fluid">
   <div class="span6 offset3">
 
-    <%= render 'form' %>
+
+    <dl>
+      <dt><%= t(:description) %></dt>
+      <dd><%= @report.description %></dd>
+      <dt><%= t(:location) %></dt>
+      <dd>
+        <%= gmaps({
+                          :map_options => { :auto_zoom => false, :zoom => 15, :raw => '{styles: myStyle}' },
+                          :markers     => { 'data' => @report.to_gmaps4rails },
+                  })
+        %>
+        <br/>
+        <!--   <small><%= @report.coordinates %></small> -->
+      </dd>
+    </dl>
+
+
+    <%= form_for(@report, :html => {:multipart => true, :class => 'form-horizontal'}) do |f| %>
+
+        <div class="form-actions">
+          <%= f.submit t(:mark_as_solved), :class => 'btn btn-danger btn-large' %>
+          <%= link_to t(:back), root_path, :class => 'btn' %>
+        </div>
+
+    <% end %>
+
 
   </div>
 </div>

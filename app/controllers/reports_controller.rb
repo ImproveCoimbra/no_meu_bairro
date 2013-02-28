@@ -66,4 +66,16 @@ class ReportsController < ApplicationController
       end
     end
   end
+
+  # GET /reports/1/edit?token=ABCDE
+  def edit
+    @report = Report.find_by(:id => params[:id], :token => params[:token])
+  end
+
+  # PUT /reports/1
+  # PUT /reports/1.json
+  def update
+    @report = Report.find_by(:id => params[:id], :token => params[:token])
+  end
+
 end
