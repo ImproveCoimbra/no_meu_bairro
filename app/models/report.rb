@@ -84,6 +84,10 @@ class Report
     if self.municipality.try(:driver)
       self.municipality.driver.new(self).notify rescue nil
     end
+    if self.user && self.user.uuid
+      ReporterMailer.reporter_email(self).deliver
+    end
+
   end
 
   def mark_as_solved
