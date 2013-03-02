@@ -1,9 +1,36 @@
 <h2><%= t(:edit_report) %></h2>
 
-<div class="row-fluid">
+<div id="problem" class="row-fluid">
   <div class="span6 offset3">
 
-    <%= render 'form' %>
+
+    <dl>
+      <dt><%= t(:description) %></dt>
+      <dd><%= @report.description %></dd>
+      <dt><%= t(:location) %></dt>
+      <dd>
+        <%= gmaps({
+                          :map_options => { :auto_zoom => false, :zoom => 15, :raw => '{styles: myStyle}' },
+                          :markers     => { 'data' => @report.to_gmaps4rails },
+                  })
+        %>
+        <br/>
+        <!--   <small><%= @report.coordinates %></small> -->
+      </dd>
+    </dl>
+
+
+    <%= form_for(@report, :html => {:multipart => true, :class => 'form-horizontal'}) do |f| %>
+
+        <%= f.hidden_field :token %>
+        <div class="form-actions">
+
+          <%= f.submit t(:mark_as_solved), :class => 'btn btn-danger btn-large' if @report.closure_date == nil %>
+          <%= link_to t(:back), :back, :class => 'btn' %>
+        </div>
+
+    <% end %>
+
 
   </div>
 </div>

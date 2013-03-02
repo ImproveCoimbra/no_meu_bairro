@@ -84,6 +84,14 @@ class Report
     if self.municipality.try(:driver)
       self.municipality.driver.new(self).notify rescue nil
     end
+    if self.user && self.user.uuid
+      ReporterMailer.reporter_email(self).deliver
+    end
+
+  end
+
+  def mark_as_solved
+    self.closure_date = DateTime.now
   end
 
   def lixo
