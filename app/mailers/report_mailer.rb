@@ -5,6 +5,6 @@ class ReportMailer < ActionMailer::Base
   def report_email(report)
     @report = report
     name_and_mail_destination = "#{report.municipality.driver_parameters["destination_name"]} <#{report.municipality.driver_parameters["destination_mail"]}>"
-    mail(:to => name_and_mail_destination, :subject => "Situação Reportada em #{report.municipality.name}")
+    mail(:to => name_and_mail_destination, :subject => "Situação Reportada em #{report.municipality.name} - #{report.id}")
   end
 end
