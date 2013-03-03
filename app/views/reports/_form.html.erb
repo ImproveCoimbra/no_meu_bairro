@@ -41,8 +41,13 @@
     </div>
 
     <p>
-      <div id="status_message"></div>
-    </p>
+    <div class="status_message" id="loading_location_message"  style="visibility: hidden">
+      <%= image_tag "ajax-loader.gif" %>
+      <%= t(:searching_location) %>
+    </div>
+    <div class="status_message" id="location_found_message"  style="visibility: hidden"><%= t(:location_found_message) %></div>
+    <div class="status_message" id="location_not_found_message" style="visibility: hidden"><%= t(:location_not_found_message) %></div>
+
 
     <input type="hidden" name="report[coordinates][]" id="longitude" value=""/>
     <input type="hidden" name="report[coordinates][]" id="latitude" value=""/>

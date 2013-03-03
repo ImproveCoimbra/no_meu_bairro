@@ -30,3 +30,6 @@ en:
   update_report: "Report updated."
   created_report: "Report created."
   report: "Report"
+  location_found_message: "Note: Location found automatically."
+  searching_location: "Searching location."
+  location_not_found_message: "Could not find your current location. Please validate your browser settings."

@@ -2,24 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/ajax-loader.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/functional/report_mailer_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/functional/reporter_mailer_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/reports/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/reports/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/en.yml" afterPath="$PROJECT_DIR$/config/locales/en.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/geolocation.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/geolocation.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/pt.yml" afterPath="$PROJECT_DIR$/config/locales/pt.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mailers/report_mailer.rb" afterPath="$PROJECT_DIR$/app/mailers/report_mailer.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mailers/reporter_mailer.rb" afterPath="$PROJECT_DIR$/app/mailers/reporter_mailer.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="bitchingserver.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362187321465" ignored="false" />
+    <file path="/Dummy.txt" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362341272407" ignored="false" />
     <file path="/reporter_mailer.rb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362174496458" ignored="false" />
     <file path="/report_email.html.erb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362174155131" ignored="false" />
-    <file path="/temp.yml" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362174193894" ignored="false" />
-    <file path="/en.yml" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362174206260" ignored="false" />
+    <file path="/temp.yml" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362341272407" ignored="false" />
+    <file path="/en.yml" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362344870867" ignored="false" />
     <file path="/reporter_email.html.erb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362176514231" ignored="false" />
     <file path="/reporter_email.text.erb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362174390814" ignored="false" />
     <file path="/send_mail_report_driver.rb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362175626098" ignored="false" />
     <file path="/report.rb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362175996768" ignored="false" />
-    <file path="/a.dummy" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362187669495" ignored="false" />
+    <file path="/a.dummy" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362340616973" ignored="false" />
     <file path="/report_mailer.rb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362187782808" ignored="false" />
+    <file path="/_form.html.erb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362346209345" ignored="false" />
+    <file path="/application.css.scss.erb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362340751493" ignored="false" />
+    <file path="/geolocation.js" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362345221220" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,19 +62,68 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pt.yml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pt.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/locales/pt.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="57" selection-start="1212" selection-end="1212" vertical-scroll-proportion="0.70394737">
+            <state line="46" column="71" selection-start="1590" selection-end="1590" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="municipality_finder.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/connectors/municipality_finder.rb">
+      <file leaf-file-name="en.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="636" selection-end="636" vertical-scroll-proportion="0.0">
+            <state line="34" column="106" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/reports/_form.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="44" column="38" selection-start="1734" selection-end="1734" vertical-scroll-proportion="1.2642857">
+              <folding>
+                <element signature="n#style#0;n#div#5;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#6;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#7;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="geolocation.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/geolocation.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="51" selection-start="797" selection-end="797" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///var/lib/gems/1.9.1/gems/jquery-rails-2.1.4/vendor/assets/javascripts/jquery.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9008" column="0" selection-start="252698" selection-end="252698" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prototype.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///var/lib/gems/1.9.1/gems/json-1.7.7/data/prototype.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1573" column="2" selection-start="42277" selection-end="42277" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.css.scss.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="86" column="1" selection-start="1477" selection-end="1477" vertical-scroll-proportion="-6.0416665">
               <folding />
             </state>
           </provider>
@@ -76,51 +133,6 @@
         <entry file="file://$PROJECT_DIR$/app/models/report.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="report_email.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/report_mailer/report_email.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="23" selection-start="300" selection-end="300" vertical-scroll-proportion="-8.125">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="report_email.text.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/report_mailer/report_email.text.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="environment.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/environment.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/application.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="29" selection-start="3508" selection-end="3516" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="development.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="26" selection-start="1289" selection-end="1289" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -148,14 +160,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/controllers/reports_controller.rb" />
-        <option value="$PROJECT_DIR$/app/connectors/municipality_finder.rb" />
         <option value="$PROJECT_DIR$/app/models/municipality.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/municipalities_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/reports/index.html.erb" />
-        <option value="$PROJECT_DIR$/config/locales/en.yml" />
         <option value="$PROJECT_DIR$/app/connectors/send_mail_report_driver.rb" />
         <option value="$PROJECT_DIR$/app/models/report.rb" />
         <option value="$PROJECT_DIR$/app/views/reporter_mailer/reporter_email.text.erb" />
@@ -163,7 +171,11 @@
         <option value="$PROJECT_DIR$/app/views/report_mailer/report_email.html.erb" />
         <option value="$PROJECT_DIR$/app/mailers/report_mailer.rb" />
         <option value="$PROJECT_DIR$/app/mailers/reporter_mailer.rb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss.erb" />
         <option value="$PROJECT_DIR$/config/locales/pt.yml" />
+        <option value="$PROJECT_DIR$/config/locales/en.yml" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/geolocation.js" />
+        <option value="$PROJECT_DIR$/app/views/reports/_form.html.erb" />
       </list>
     </option>
   </component>
@@ -235,7 +247,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -249,101 +261,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="script" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bitchingserver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bitchingserver" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bitchingserver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bitchingserver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="environments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bitchingserver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bitchingserver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reports" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bitchingserver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bitchingserver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bitchingserver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bitchingserver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="report_mailer" />
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -375,7 +297,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mailers" />
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -393,7 +315,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -833,12 +759,16 @@
       <created>1362187333959</created>
       <updated>1362187333959</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Problema com a hash pt do merge&#10;ID no subject da mensagem, Com o ID lá o gmail não tenta ser esperto.">
+      <created>1362188080404</created>
+      <updated>1362188080404</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="25" width="1444" height="877" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32802126" sideWeight="0.49713057" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -846,10 +776,10 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3271523" sideWeight="0.49713057" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24605452" sideWeight="0.46490067" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24605452" sideWeight="0.46490067" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5350993" sideWeight="0.6779053" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5350993" sideWeight="0.31707317" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5350993" sideWeight="0.31707317" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32802126" sideWeight="0.33070302" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980132" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -898,7 +828,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Git is making me mad!!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Problema com a hash pt do merge&#10;ID no subject da mensagem, Com o ID lá o gmail não tenta ser esperto." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -914,6 +844,7 @@
     <MESSAGE value="Search municipality" />
     <MESSAGE value="Send email to the reporter with edit link" />
     <MESSAGE value="Git is making me mad!!!!" />
+    <MESSAGE value="Problema com a hash pt do merge&#10;ID no subject da mensagem, Com o ID lá o gmail não tenta ser esperto." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -927,46 +858,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/municipalities_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="3" selection-start="591" selection-end="591" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="17" selection-start="1165" selection-end="1165" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reports/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="15" selection-start="176" selection-end="176" vertical-scroll-proportion="-4.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/reports_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="0" selection-start="2326" selection-end="2326" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/connectors/municipality_finder.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="636" selection-end="636" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/lib/gems/1.9.1/gems/mongoid-3.1.0/lib/mongoid/relations/proxy.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="0" selection-start="4597" selection-end="4597" vertical-scroll-proportion="0.33114755" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/connectors/send_mail_report_driver.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="4" selection-start="116" selection-end="116" vertical-scroll-proportion="0.14754099">
@@ -1030,10 +921,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///var/lib/gems/1.9.1/gems/json-1.7.7/data/prototype.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1573" column="2" selection-start="42277" selection-end="42277" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="1" selection-start="1477" selection-end="1477" vertical-scroll-proportion="-6.0416665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///var/lib/gems/1.9.1/gems/jquery-rails-2.1.4/vendor/assets/javascripts/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9008" column="0" selection-start="252698" selection-end="252698" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/locales/pt.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="57" selection-start="1212" selection-end="1212" vertical-scroll-proportion="0.70394737">
+        <state line="46" column="71" selection-start="1590" selection-end="1590" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="106" selection-start="1430" selection-end="1430" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/geolocation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="51" selection-start="797" selection-end="797" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reports/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="38" selection-start="1734" selection-end="1734" vertical-scroll-proportion="1.2642857">
+          <folding>
+            <element signature="n#style#0;n#div#5;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#6;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
