@@ -1,14 +1,8 @@
 $(document).ready(function () {
 
     var loading_location_message = $("#loading_location_message");
-    loading_location_message.hide();
-    loading_location_message.css("visibility", "visible");
     var location_found_message = $("#location_found_message");
-    location_found_message.hide();
-    location_found_message.css("visibility", "visible");
     var location_not_found_message = $("#location_not_found_message");
-    location_not_found_message.hide();
-    location_not_found_message.css("visibility", "visible");
 
 
     function findLocation() {
