@@ -45,10 +45,9 @@ jQuery(function ($) {
 
       var onMarkerClick = function onMarkerClick(marker, event){
         return function(event){
-          window.open(marker.link, '_blank');
-          window.focus();
+          window.location = marker.link;
         }
-      }
+      };
 
       // Click on marker to open show view
       google.maps.event.addListener(marker.serviceObject, 'click', onMarkerClick(marker, event));

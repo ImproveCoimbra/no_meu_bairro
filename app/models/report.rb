@@ -14,13 +14,12 @@ class Report
   field :token, type: String
 
 
-
-  index({ coordinates: "2d" })
+  index({coordinates: "2d"})
 
   ##I have to belong to a user
   belongs_to :user
   belongs_to :municipality
-  embeds_many :photos, :class_name => "ReportPhoto", :cascade_callbacks => true
+  embeds_many :photos, :class_name => 'ReportPhoto', :cascade_callbacks => true
 
   accepts_nested_attributes_for :photos
 
@@ -65,7 +64,7 @@ class Report
   # Methods
 
   def as_json(ctx)
-    super(:include => { :photos => { :only => [:_id], :methods => :styles }}, :except => [:client_ip, :token] )
+    super(:include => {:photos => {:only => [:_id], :methods => :styles}}, :except => [:client_ip, :token])
   end
 
   def latitude
@@ -99,6 +98,23 @@ class Report
     second_loc = [81.24958300000003, 12.060422]
     reports = Report.where(:coordinates => {"$within" => {"$box" => [first_loc, second_loc]}})
     reports[0].coordinates
+  end
+
+  def gmaps4rails_marker_picture
+
+    if self.closure_date.nil?
+      {
+          :picture => 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+          :width => 32,
+          :height => 32
+      }
+    else
+      {
+          :picture => 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+          :width => 32,
+          :height => 32
+      }
+    end
   end
 
 end
