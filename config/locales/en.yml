@@ -20,7 +20,7 @@ en:
   more_information: "Additional information"
   report_new_problem: "Report new problem"
   for_more_information_visit: "For more information visit"
-  app_name: "O meu bairro"
+  app_name: "No meu bairro"
   mission_statement: "Help solve the problems in your neighbourhood"
   email: "E-Mail"
   sample_mail: "john77@gmail.com"
@@ -35,3 +35,4 @@ en:
   location_not_found_message: "Could not find your current location. Please validate your browser settings."
   retry_location: "Retry search"
   extend_time: "Extend time"
+  about: "About"

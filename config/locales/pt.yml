@@ -23,7 +23,7 @@ pt:
   more_information: "Mais informação"
   report_new_problem: "Reportar novo problema"
   for_more_information_visit: "Para consultar mais informação visite"
-  app_name: "O meu bairro"
+  app_name: "No meu bairro"
   mission_statement: "Ajuda a resolver os problemas do teu bairro"
 
 
@@ -47,3 +47,4 @@ pt:
   location_not_found_message: "Não foi possível validar a localização. Verifique as definições do seu browser."
   retry_location: "Procurar novamente"
   extend_time: "Extender tempo"
+  about: "Sobre"

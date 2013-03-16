@@ -92,7 +92,7 @@ class Report
     if self.municipality.try(:driver)
       self.municipality.driver.new(self).notify rescue nil
     end
-    if self.user && self.user.uuid
+    if self.user && !self.user.uuid.blank?
       ReporterMailer.reporter_email(self).deliver
     end
 

@@ -7,4 +7,9 @@ class FrontController < ApplicationController
     end
   end
 
+
+  def about
+    render :layout => 'application'
+  end
+
 end

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>O meu bairro</title>
+  <title>No meu bairro</title>
   <meta name="description" content="Ajuda a resolver os problemas do teu bairro.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag "application", :media => "all" %>
@@ -30,7 +30,7 @@
       <div class="container-fluid">
         <div class="row-fluid">
           <div class="span12">
-            <h1><a href="/">O meu bairro</a></h1>
+            <h1><a href="/">No meu bairro</a></h1>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span12">
-          <p><a href="http://improve.madeincoimbra.org">Made in Improve Coimbra</a></p>
+          <p><%= link_to t(:about), :controller => :front, :action => "about" %> | <a href="http://improve.madeincoimbra.org">Made in Improve Coimbra</a></p>
         </div>
       </div>
     </div>
