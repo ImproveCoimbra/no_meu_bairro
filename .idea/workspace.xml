@@ -8,7 +8,7 @@
     </list>
     <ignored path="bitchingserver.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1363457345970" ignored="false" />
+    <file path="/Dummy.txt" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1363457464016" ignored="false" />
     <file path="/reporter_mailer.rb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362479956129" ignored="false" />
     <file path="/report_email.html.erb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362174155131" ignored="false" />
     <file path="/temp.yml" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1363455925838" ignored="false" />
@@ -97,7 +97,7 @@
       <file leaf-file-name="about.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/front/about.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="108" selection-start="295" selection-end="295" vertical-scroll-proportion="0.2777778">
+            <state line="18" column="13" selection-start="898" selection-end="898" vertical-scroll-proportion="0.5555556">
               <folding />
             </state>
           </provider>
@@ -702,7 +702,11 @@
       <created>1363457341260</created>
       <updated>1363457341260</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="About">
+      <created>1363457467628</created>
+      <updated>1363457467628</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -767,7 +771,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="About screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="About" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -791,6 +795,7 @@
     <MESSAGE value="Send reporter mail to the correct destination&#10;Do not present the edit link by default" />
     <MESSAGE value="Extend time of a report" />
     <MESSAGE value="About screen" />
+    <MESSAGE value="About" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -916,7 +921,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/front/about.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="108" selection-start="295" selection-end="295" vertical-scroll-proportion="0.2777778">
+        <state line="18" column="13" selection-start="898" selection-end="898" vertical-scroll-proportion="0.5555556">
           <folding />
         </state>
       </provider>
