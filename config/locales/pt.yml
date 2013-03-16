@@ -46,3 +46,4 @@ pt:
   searching_location: "A pesquisar a localização."
   location_not_found_message: "Não foi possível validar a localização. Verifique as definições do seu browser."
   retry_location: "Procurar novamente"
+  extend_time: "Extender tempo"

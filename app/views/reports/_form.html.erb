@@ -20,7 +20,7 @@
         <br/><%= link_to_add_fields t(:add_another_photo), f, :photos %>
       </div>
     </div>
-    <div class="control-group" id="no-photos-div" hidden="true">
+    <div class="control-group" id="no-photos-div" style="display: none">
       <%= f.label :photos, t(:photo_or_photos), :class => 'control-label' %>
       <div class="controls">
         <%= t :no_browser_support_for_image_upload %>

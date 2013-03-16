@@ -10,6 +10,7 @@ class Report
   field :description, type: String
   field :coordinates, type: Array
   field :closure_date, type: DateTime
+  field :last_reporter_confirmation, type: DateTime
   field :client_ip, type: String
   field :token, type: String
 
@@ -31,7 +32,7 @@ class Report
   acts_as_gmappable :process_geocoding => false
 
   # Callbacks
-  before_create :find_municipality, :convert_location, :generate_token
+  before_create :find_municipality, :convert_location, :generate_token, :update_confirmation
   after_create :bitch
 
   def generate_token
@@ -42,6 +43,10 @@ class Report
       end
     end
     self.token = token
+  end
+
+  def update_confirmation
+    self.last_reporter_confirmation = DateTime.now
   end
 
   def convert_location
@@ -62,9 +67,13 @@ class Report
 
 
   # Methods
-
   def as_json(ctx)
     super(:include => {:photos => {:only => [:_id], :methods => :styles}}, :except => [:client_ip, :token])
+  end
+
+  def to_xml(options={})
+    options.merge!(:include => {:photos => {:only => [:_id], :methods => :styles}}, :except => [:client_ip, :token])
+    super(options)
   end
 
   def latitude

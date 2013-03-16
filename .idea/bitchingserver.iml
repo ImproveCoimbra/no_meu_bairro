@@ -42,6 +42,7 @@
     <orderEntry type="library" scope="PROVIDED" name="json (v1.7.7, ruby-1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="libv8 (v3.11.8.13, ruby-1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.4.4, ruby-1.9.3-p194) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mime-types (v1.21, ruby-1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mimetype-fu (v0.1.2, ruby-1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mongoid (v3.1.0, ruby-1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mongoid-paperclip (v0.0.8, ruby-1.9.3-p194) [gem]" level="application" />

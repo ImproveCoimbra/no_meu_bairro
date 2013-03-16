@@ -34,3 +34,4 @@ en:
   searching_location: "Searching location."
   location_not_found_message: "Could not find your current location. Please validate your browser settings."
   retry_location: "Retry search"
+  extend_time: "Extend time"

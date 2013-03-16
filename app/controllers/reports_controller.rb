@@ -16,6 +16,7 @@ class ReportsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @reports }
+      format.xml { render xml: @reports }
     end
   end
 
@@ -71,6 +72,23 @@ class ReportsController < ApplicationController
   def edit
     @report = Report.find_by(:id => params[:id], :token => params[:token])
   end
+
+  # PUT /reports/1/extend
+  # PUT /reports/1/extend.json
+  def extend
+    @report = Report.find_by(:id => params[:id], :token => params[:report][:token])
+    @report.update_confirmation
+    @report.save
+    respond_to do |format|
+      if @report.save
+        format.html { redirect_to @report, notice: t(:update_report) }
+        format.json { render json: @report.errors, status: :unprocessable_entity }
+      else
+        # TODO
+      end
+    end
+  end
+
 
   # PUT /reports/1
   # PUT /reports/1.json
