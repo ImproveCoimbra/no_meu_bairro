@@ -32,12 +32,15 @@ pt:
   mongoid:
     attributes:
       report:
+        photos: fotos
         description: descrição
         coordinates: localização
     errors:
       models:
         report:
           attributes:
+            photos:
+              invalid: inválidas
             description:
               blank: de um relatório não pode ser vazia
   email: "Email"
