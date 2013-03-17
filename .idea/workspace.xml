@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" name="Default" comment="OPEN Graph.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.rb" afterPath="$PROJECT_DIR$/config/application.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/reports/index.html.erb" afterPath="$PROJECT_DIR$/app/views/reports/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mailers/report_mailer.rb" afterPath="$PROJECT_DIR$/app/mailers/report_mailer.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mailers/reporter_mailer.rb" afterPath="$PROJECT_DIR$/app/mailers/reporter_mailer.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/reports/show.html.erb" afterPath="$PROJECT_DIR$/app/views/reports/show.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="bitchingserver.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1363525541767" ignored="false" />
+    <file path="/Dummy.txt" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1363533494950" ignored="false" />
     <file path="/reporter_mailer.rb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1363533349448" ignored="false" />
     <file path="/report_email.html.erb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362174155131" ignored="false" />
     <file path="/temp.yml" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1363455925838" ignored="false" />
@@ -20,7 +17,7 @@
     <file path="/reporter_email.text.erb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362174390814" ignored="false" />
     <file path="/send_mail_report_driver.rb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362175626098" ignored="false" />
     <file path="/report.rb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1363451584475" ignored="false" />
-    <file path="/a.dummy" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362614509133" ignored="false" />
+    <file path="/a.dummy" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1363534331206" ignored="false" />
     <file path="/report_mailer.rb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362187782808" ignored="false" />
     <file path="/_form.html.erb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1363436610669" ignored="false" />
     <file path="/application.css.scss.erb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362340751493" ignored="false" />
@@ -29,7 +26,7 @@
     <file path="/fluid-map.js" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362438696787" ignored="false" />
     <file path="/index.html.erb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362485453047" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/rubymine.jar!/resources/html5-schema/html5.rnc" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362521423727" ignored="false" />
-    <file path="/application.rb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1362614545618" ignored="false" />
+    <file path="/application.rb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1363534357439" ignored="false" />
     <file path="/reports_controller.rb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1363448530505" ignored="false" />
     <file path="/edit.html.erb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1363447829778" ignored="false" />
     <file path="/routes.rb" changelist="1e6fd7f4-6dd3-4950-a228-9d01c74b7759" time="1363455192598" ignored="false" />
@@ -63,10 +60,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reporter_mailer.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="reporter_mailer.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/mailers/reporter_mailer.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="280" selection-end="280" vertical-scroll-proportion="0.30927834">
+            <state line="8" column="0" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -120,7 +117,16 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/reports/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="35" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0">
+            <state line="17" column="23" selection-start="457" selection-end="457" vertical-scroll-proportion="-9.807693">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/application.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="82" column="33" selection-start="3550" selection-end="3550" vertical-scroll-proportion="0.64285713">
               <folding />
             </state>
           </provider>
@@ -148,7 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/views/reports/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/reports/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/reports/edit.html.erb" />
@@ -164,6 +169,7 @@
         <option value="$PROJECT_DIR$/app/helpers/reports_helper.rb" />
         <option value="$PROJECT_DIR$/app/mailers/reporter_mailer.rb" />
         <option value="$PROJECT_DIR$/app/mailers/report_mailer.rb" />
+        <option value="$PROJECT_DIR$/config/application.rb" />
       </list>
     </option>
   </component>
@@ -901,19 +907,25 @@
       <created>1363457804749</created>
       <updated>1363457804749</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="1-OPEN Graph. 2-Truncate subject in mails">
+      <created>1363533498483</created>
+      <updated>1363533498483</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1444" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32802126" sideWeight="0.49713057" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3258278" sideWeight="0.49713057" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25322813" sideWeight="0.57615894" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42384106" sideWeight="0.6779053" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25322813" sideWeight="0.67417216" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42384106" sideWeight="0.6779053" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5350993" sideWeight="0.31707317" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32802126" sideWeight="0.33070302" order="2" side_tool="false" content_ui="tabs" />
@@ -921,8 +933,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32628798" sideWeight="0.49713057" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32802126" sideWeight="0.49713057" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -966,7 +976,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="About screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="1-OPEN Graph. 2-Truncate subject in mails" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -991,6 +1001,7 @@
     <MESSAGE value="Extend time of a report" />
     <MESSAGE value="About" />
     <MESSAGE value="About screen" />
+    <MESSAGE value="1-OPEN Graph. 2-Truncate subject in mails" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1014,13 +1025,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/report.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="21" selection-start="2235" selection-end="2235" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/reports/_photo_fields.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1052,13 +1056,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/reports/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="26" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reports/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="35" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1121,7 +1118,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/mailers/reporter_mailer.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="280" selection-end="280" vertical-scroll-proportion="0.30927834">
+        <state line="8" column="0" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reports/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="23" selection-start="457" selection-end="457" vertical-scroll-proportion="-9.807693">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="33" selection-start="3550" selection-end="3550" vertical-scroll-proportion="0.64285713">
           <folding />
         </state>
       </provider>
