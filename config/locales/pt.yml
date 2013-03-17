@@ -11,14 +11,16 @@ pt:
   problem_details_description: "Detalhes sobre o problema..."
 
   photo_or_photos: "Foto(s)"
-  add_another_photo: "Adicionar Foto"
+  add_another_photo: "Adicionar mais uma foto"
+  email_help: "Ao deixar o seu email poderá mais tarde marcar o problema como resolvido"
   no_browser_support_for_image_upload: "Lamentamos mas o seu browser não suporta envio de imagens."
   error: "Erro"
   stopped_report_from_save: "impediram que este relatório fosse guardado"
   photo: "Foto"
   remove: "Remover"
   edit_report: "Editar relatório"
-  reported_problem: "Problema reportado no site 'O meu bairro'"
+  reported_problem: "Reportaste um problema no site 'No meu bairro'"
+  new_reported_problem: "Novo problema reportado no site 'No meu bairro'"
   reported_problems: "Problemas reportados"
   more_information: "Mais informação"
   report_new_problem: "Reportar novo problema"
@@ -28,14 +30,20 @@ pt:
 
 
   mongoid:
+    attributes:
+      report:
+        description: descrição
+        coordinates: localização
     errors:
       models:
         report:
           attributes:
             description:
-              blank: A descrição de um relatório não pode ser vazia
-  email: "E-Mail"
+              blank: de um relatório não pode ser vazia
+  email: "Email"
   sample_mail: "joao77@gmail.com"
+  invalid_format: "tem um formato inválido"
+  invalid_size: "tem tamanho inválido"
   problem: "problema"
   view_more_information: "Para consultar mais informação"
   mark_as_solved: "Marcar como resolvido"

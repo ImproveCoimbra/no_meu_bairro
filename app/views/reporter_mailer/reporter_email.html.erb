@@ -4,10 +4,13 @@
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
 </head>
 <body>
-<p><b><%= t(:reported_problem) %>: <%= @report.description %></b></p>
-
 <p>
-  Fechar relatório:  <%= link_to t(:edit_report), edit_report_url(@report, :token => @report.token) %>  .
+  <b><%= t(:reported_problem) %>:</b>
+</p>
+<p><%= @report.description %></p>
+<br/>
+<p>
+  Usa este link para marcar o problema como resolvido: <%= link_to t(:edit_report), edit_report_url(@report, :token => @report.token) %>
 </p>
 
 </body>

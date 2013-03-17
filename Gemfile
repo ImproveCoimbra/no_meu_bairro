@@ -22,4 +22,4 @@ gem 'gmaps4rails'
 
 gem 'httparty'
 
-gem 'therubyracer'
+gem 'therubyracer', :platform => :ruby

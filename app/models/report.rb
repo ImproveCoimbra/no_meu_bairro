@@ -55,13 +55,13 @@ class Report
 
   def validate_coordinates_format
     if self.coordinates.size != 2
-      errors.add(:coordinates, "tem tamanho inválido")
+      errors.add(:coordinates, I18n.t(:invalid_size))
     end
 
     begin
       self.coordinates.each { |x| Float(x) }
     rescue
-      errors.add(:coordinates, "tem um formato inválido")
+      errors.add(:coordinates, I18n.t(:invalid_format))
     end
   end
 

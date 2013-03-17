@@ -2,11 +2,12 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  add_another_photo: "Add Photo"
+  add_another_photo: "Add one more photo"
   photo_or_photos: "Photo(s)"
   no_browser_support_for_image_upload: "We are sorry but your browser does not support image upload."
   description: "Description"
   location: "Location"
+  email_help: "With your email, you can mark it as solved"
   problem_details_description: "Detailed description of problem"
   send: "Send"
   back: "Back"
@@ -16,10 +17,13 @@ en:
   remove: "Remove"
   edit_report: "Edit report"
   reported_problem: "Reported problem"
+  new_reported_problem: "New problem reported"
   reported_problems: "Reported problems"
   more_information: "Additional information"
   report_new_problem: "Report new problem"
   for_more_information_visit: "For more information visit"
+  invalid_format: "has an invalid format"
+  invalid_size: "has an invalid size"
   app_name: "No meu bairro"
   mission_statement: "Help solve the problems in your neighbourhood"
   email: "E-Mail"

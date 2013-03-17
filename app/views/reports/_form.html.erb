@@ -29,7 +29,8 @@
     <div class="control-group">
       <%= f.label :user, t(:email), :class => 'control-label' %>
       <div class="controls">
-        <%= text_field :user, :uuid, :placeholder => t(:sample_mail) %>
+        <%= text_field :user, :uuid, :placeholder => t(:sample_mail), :type => 'email' %>
+        <span class="help-inline"><small><%= t(:email_help) %></small></span>
       </div>
     </div>
 
