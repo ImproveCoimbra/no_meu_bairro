@@ -11,7 +11,7 @@
 
   <meta property="og:title" content="<%= t(:app_name) + ' | ' + t(:mission_statement) %>"/>
   <meta property="og:description" content="<% if content_for? :description %><%= yield :description %><% else %>Ajuda a resolver os problemas do teu bairro.<% end %>"/>
-  <meta property="og:image" content="<% if content_for? :report_image %><%= yield :report_image %><% else %><% end %>"/>
+  <meta property="og:image" content="<% if content_for? :report_image %><%= yield :report_image %><% else %>http://nomeubairro.pt/logo.png<% end %>"/>
   <meta property="og:type" content="website"/>
 
 
