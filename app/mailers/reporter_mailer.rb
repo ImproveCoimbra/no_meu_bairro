@@ -5,6 +5,12 @@ class ReporterMailer < ActionMailer::Base
   def reporter_email(report)
     @report = report
     name_and_mail_destination = "#{report.user.uuid}"
-    mail(:to => name_and_mail_destination, :subject => "Problema (#{report.municipality.name}) - #{truncate(report.description, :length => 20)}")
+    small_description = truncate(report.description)
+    mail(:to => name_and_mail_destination, :subject => "Problema (#{report.municipality.name}) - #{small_description}")
   end
+
+  def truncate(text)
+    text[0..17] + (text.size > 17 ? '...' : '')
+  end
+
 end
