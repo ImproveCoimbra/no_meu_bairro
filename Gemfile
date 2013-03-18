@@ -17,7 +17,7 @@ gem 'aws-sdk'
 
 gem 'jquery-rails', '2.1.4'
 
-gem "mimetype-fu", :require => 'mimetype_fu'
+gem 'mimetype-fu', :require => 'mimetype_fu'
 gem 'gmaps4rails'
 
 gem 'httparty'
