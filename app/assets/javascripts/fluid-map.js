@@ -13,21 +13,21 @@ jQuery(function ($) {
     'footer' : $('footer')
   };
 
-  headerHeight = jQueryCache.header.outerHeight();
-  footerHeight = jQueryCache.footer.outerHeight();
-
   ajdustSize = function () {
     var height, windowHeight;
 
     windowHeight = jQueryCache.window.height();
+    headerHeight = jQueryCache.header.outerHeight();
+    footerHeight = jQueryCache.footer.outerHeight();
+
     height = windowHeight - headerHeight - footerHeight;
 
-    if (windowHeight === lastHeight || height < 200) {
+    if (height === lastHeight || height < 200) {
         //If the height does not change bail out
         return;
     }
 
-    lastHeight = windowHeight;
+    lastHeight = height;
 
     jQueryCache['.gmaps4rails_map, .map-container'].css('height', height + 'px');
   };
