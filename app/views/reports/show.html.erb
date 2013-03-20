@@ -36,7 +36,7 @@ end %>
     <ul class="thumbnails">
       <% @report.photos.each do |p| %>
         <li class="span3">
-          <%= link_to p.attachment.url, :class => 'thumbnail' do %>
+          <%= link_to p.attachment.url(:medium), :class => 'thumbnail' do %>
             <%= image_tag p.attachment.url(:medium) %>
           <% end %>
         </li>
