@@ -48,7 +48,7 @@ end %>
     <ul class="thumbnails">
       <% @report.photos.each do |p| %>
           <li class="span3">
-            <a href="#full_image<%= p.attachment.url(:medium).hash %>" data-toggle="modal">
+            <a href="#full_image<%= p.attachment.url(:medium).hash %>" data-toggle="modal" class="thumbnail">
               <%= image_tag p.attachment.url(:medium) %>
             </a>
           </li>
