@@ -22,7 +22,19 @@ end %>
       <dt><%= t(:location) %></dt>
       <dd>
         <%= gmaps({
-            :map_options => { :auto_zoom => false, :zoom => 15, :raw => '{styles: myStyle}' },
+            :map_options => { :auto_zoom => false,
+                              :zoom => 15,
+
+                              :raw => '{
+                              styles: myStyle,
+                              disableDefaultUI: true,
+                              mapTypeControl: true,
+                              zoomControl: true,
+                              zoomControlOptions: {
+                                    style: google.maps.ZoomControlStyle.SMALL
+                              },
+                              draggable: false
+                              }' },
             :markers     => { 'data' => @report.to_gmaps4rails },
           })
         %>
