@@ -47,11 +47,16 @@ end %>
 
     <ul class="thumbnails">
       <% @report.photos.each do |p| %>
-        <li class="span3">
-          <%= link_to p.attachment.url(:medium), :class => 'thumbnail' do %>
+          <li class="span3">
+            <a href="#full_image<%= p.attachment.url(:medium).hash %>" data-toggle="modal">
+              <%= image_tag p.attachment.url(:medium) %>
+            </a>
+          </li>
+          <div id="full_image<%= p.attachment.url(:medium).hash %>" class="modal modal-fluid hide full-image">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <%= image_tag p.attachment.url(:medium) %>
-          <% end %>
-        </li>
+          </div>
+
       <% end %>
     </ul>
 

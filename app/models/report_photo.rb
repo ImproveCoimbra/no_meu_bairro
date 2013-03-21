@@ -4,7 +4,11 @@ class ReportPhoto
 
   embedded_in :report, :inverse_of => :photos
 
-  has_mongoid_attached_file :attachment, :styles => { :thumb => "40x40#", :small => "100x100#", :medium => "400x400>" }
+  has_mongoid_attached_file :attachment, :styles => { :thumb => '40x40#',
+                                                      :small => '100x100#',
+                                                      :medium => '400x400>',
+                                                      :large => '1024x1024>'
+  }
   attr_accessible :attachment
 
   def styles
