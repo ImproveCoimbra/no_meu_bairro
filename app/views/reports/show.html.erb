@@ -48,13 +48,17 @@ end %>
     <ul class="thumbnails">
       <% @report.photos.each do |p| %>
           <li class="span3">
-            <a href="#full_image<%= p.attachment.url(:medium).hash %>" data-toggle="modal" class="thumbnail">
+            <a href="#full_image<%= p.attachment.url(:large).hash %>" data-toggle="lightbox" class="thumbnail">
               <%= image_tag p.attachment.url(:medium) %>
             </a>
           </li>
-          <div id="full_image<%= p.attachment.url(:medium).hash %>" class="modal modal-fluid hide full-image">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <%= image_tag p.attachment.url(:medium) %>
+          <div id="full_image<%= p.attachment.url(:large).hash %>" class="lightbox hide fade" tabindex="-1" role="dialog">
+            <div class='lightbox-header'>
+              <button type="button" class="close" data-dismiss="lightbox" aria-hidden="true">&times;</button>
+            </div>
+            <div class='lightbox-content'>
+              <%= image_tag p.attachment.url(:large) %>
+            </div>
           </div>
 
       <% end %>
