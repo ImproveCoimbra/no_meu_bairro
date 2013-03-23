@@ -19,6 +19,11 @@ end %>
     <dl>
       <dt><%= t(:description) %></dt>
       <dd><%= @report.description %></dd>
+      <dt><%= t(:creation_date) %>: <%= @report.created_at.strftime('%Y-%m-%d %H:%M') %></dt>
+      <% unless @report.closure_date.blank? %>
+          <dt><%= t(:resolution_date) %>: <%= @report.closure_date.strftime('%Y-%m-%d %H:%M') %></dt>
+      <% end %>
+      <dd></dd>
       <dt><%= t(:location) %></dt>
       <dd>
         <%= gmaps({
