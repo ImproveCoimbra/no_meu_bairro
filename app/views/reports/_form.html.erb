@@ -41,6 +41,15 @@
       </div>
     </div>
 
+    <!--
+    <div id="problem" class="control-group">
+      <%# gmaps({
+                        :map_options => {:auto_zoom => false, :zoom => 15, :raw => '{styles: myStyle}'},
+                        :markers => {'data' => @report.to_gmaps4rails},
+                })
+      %>
+    </div>
+    -->
     <p>
     <div class="status_message" id="loading_location_message"  style="display: none">
       <%= image_tag 'ajax-loader.gif' %>
@@ -56,8 +65,20 @@
     <input type="hidden" name="report[coordinates][]" id="longitude" value=""/>
     <input type="hidden" name="report[coordinates][]" id="latitude" value=""/>
 
-    <div class="form-actions">
-      <%= f.submit t(:send), :class => 'btn btn-danger btn-large' %>
+    <div id="submit-in-progress" class="status_message" style="display: none">
+      <%= image_tag 'ajax-loader.gif' %><%= t(:sending_report) %>
+    </div>
+
+
+    <script type="text/javascript">
+      function send_report() {
+          $("#new_report").children().hide();
+          $("#submit-in-progress").show();
+          setTimeout(function(){$("#new_report").submit()},1000);
+      }
+    </script>
+    <div id="submit-form-actions" class="form-actions">
+      <%= link_to_function t(:send), 'send_report()' ,:class => 'btn btn-danger btn-large' %>
       <%= link_to t(:back), root_path, :class => 'btn' %>
     </div>
 
