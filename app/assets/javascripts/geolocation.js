@@ -30,11 +30,25 @@ function foundLocation(position) {
     document.getElementById('latitude').value = latitude;
     document.getElementById('longitude').value = longitude;
 
+    var latLng = new google.maps.LatLng(latitude, longitude);
+    placeMarker(latLng);
+    Gmaps.map.map.setCenter(latLng);
 }
+
 
 function noLocation() {
     loading_location_message.hide(500);
     location_not_found_message.show(500);
+
+    var latitude = 40.1950631;
+    var longitude = -8.419715912072775;
+
+    document.getElementById('latitude').value = latitude;
+    document.getElementById('longitude').value = longitude;
+
+    var latLng = new google.maps.LatLng(latitude, longitude);
+    placeMarker(latLng);
+    Gmaps.map.map.setCenter(latLng);
 }
 
 $(document).ready(function () {
