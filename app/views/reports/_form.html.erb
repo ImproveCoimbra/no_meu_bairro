@@ -42,14 +42,54 @@
     </div>
 
 
+    <p>
+    <div class="status_message" id="loading_location_message"  style="display: none">
+      <%= image_tag 'ajax-loader.gif' %>
+      <%= t(:searching_location) %>
+    </div>
+    <div class="status_message" id="location_found_message"  style="display: none"><%= t(:location_found_message) %></div>
+    <div class="status_message" id="location_not_found_message" style="display: none">
+      <%= t(:location_not_found_message) %>
+      <%= link_to_function t(:retry_location) ,'findLocation()', :class => 'btn' %>
+    </div>
+
+
+    <div id="problem" class="control-group">
+      <%= gmaps({
+                        :map_options => {
+                                :auto_zoom => false,
+                                :zoom => 15,
+                                :raw => '{styles: myStyle}'
+                        },
+                        :markers => {
+                                :data => @report.to_gmaps4rails,
+                                :options => {
+                                        :draggable => true
+                                }
+                        },
+                })
+      %>
+    </div>
 
     <% content_for :scripts do %>
 
         <script type="text/javascript" charset="utf-8">
             var markersArray = [];
             // On click, clear markers, place a new one, update coordinates in the form
-            Gmaps.map.callback = function() {
-                google.maps.event.addListener(Gmaps.map.serviceObject, 'click', function(event) {
+            Gmaps.map.callback = function () {
+                //If we already have a marker from the controller
+                if (Gmaps.map.markers[0]) {
+                    var locationFromController =
+
+                            new google.maps.LatLng(Gmaps.map.markers[0].lat, Gmaps.map.markers[0].lng);
+                    Gmaps.map.replaceMarkers([]);
+                    placeMarker(locationFromController);
+                    Gmaps.map.map.setCenter(locationFromController);
+                    updateFormLocation(locationFromController);
+                } else {
+                    findLocation();
+                }
+                google.maps.event.addListener(Gmaps.map.serviceObject, 'click', function (event) {
                     clearOverlays();
                     placeMarker(event.latLng);
                     updateFormLocation(event.latLng);
@@ -85,35 +125,6 @@
         </script>
     <% end %>
 
-
-    <p>
-    <div class="status_message" id="loading_location_message"  style="display: none">
-      <%= image_tag 'ajax-loader.gif' %>
-      <%= t(:searching_location) %>
-    </div>
-    <div class="status_message" id="location_found_message"  style="display: none"><%= t(:location_found_message) %></div>
-    <div class="status_message" id="location_not_found_message" style="display: none">
-      <%= t(:location_not_found_message) %>
-      <%= link_to_function t(:retry_location) ,'findLocation()', :class => 'btn' %>
-    </div>
-
-
-    <div id="problem" class="control-group">
-      <%= gmaps({
-                        :map_options => {
-                                :auto_zoom => false,
-                                :zoom => 15,
-                                :raw => '{styles: myStyle}'
-                        },
-                        :markers => {
-                                :data => @report.to_gmaps4rails,
-                                :options => {
-                                        :draggable => true
-                                }
-                        },
-                })
-      %>
-    </div>
 
     <input type="hidden" name="report[coordinates][]" id="longitude" value=""/>
     <input type="hidden" name="report[coordinates][]" id="latitude" value=""/>

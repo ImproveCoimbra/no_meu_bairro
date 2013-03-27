@@ -10,7 +10,6 @@ if ($('form#new_report').length > 0) {
 }
 
 function findLocation() {
-
     loading_location_message.show(500);
     location_not_found_message.hide(500);
 
@@ -51,10 +50,4 @@ function noLocation() {
     Gmaps.map.map.setCenter(latLng);
 }
 
-$(document).ready(function () {
 
-    if ($('form#new_report').length > 0) {
-        findLocation();
-    }
-
-});
