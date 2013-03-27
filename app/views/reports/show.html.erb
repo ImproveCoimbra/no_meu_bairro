@@ -17,14 +17,13 @@ end %>
     <% end %>
 
     <dl>
-      <dt><%= t(:description) %></dt>
+      <dt><%= t(:description) %>:</dt>
       <dd><%= @report.description %></dd>
-      <dt><%= t(:creation_date) %>: <%= @report.created_at.strftime('%Y-%m-%d %H:%M') %></dt>
+      <dt><%= t(:creation_date) %>: </dt><dd><%= @report.created_at.strftime('%Y-%m-%d %H:%M') %></dd>
       <% unless @report.closure_date.blank? %>
-          <dt><%= t(:resolution_date) %>: <%= @report.closure_date.strftime('%Y-%m-%d %H:%M') %></dt>
+          <dt><%= t(:resolution_date) %>:</dt><dd> <%= @report.closure_date.strftime('%Y-%m-%d %H:%M') %></dd>
       <% end %>
-      <dd></dd>
-      <dt><%= t(:location) %></dt>
+      <dt><%= t(:location) %>:</dt>
       <dd>
         <%= gmaps({
             :map_options => { :auto_zoom => false,
@@ -48,7 +47,7 @@ end %>
       </dd>
     </dl>
 
-    <h3><%= t(:photo).pluralize(2) %></h3>
+    <h3><%= t(:photo).pluralize(2) %>:</h3>
 
     <ul class="thumbnails">
       <% @report.photos.each do |p| %>
