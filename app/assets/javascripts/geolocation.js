@@ -23,14 +23,16 @@ function findLocation() {
 }
 
 function foundLocation(position) {
-    loading_location_message.hide(500);
+    loading_location_message.hide();
     location_found_message.show(500);
-    map_container.css("visibility","visible");
+    map_container.show();
 
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
     document.getElementById('latitude').value = latitude;
     document.getElementById('longitude').value = longitude;
+
+    google.maps.event.trigger(Gmaps.map.map, 'resize');
 
     var latLng = new google.maps.LatLng(latitude, longitude);
     placeMarker(latLng);
@@ -39,15 +41,17 @@ function foundLocation(position) {
 
 
 function noLocation() {
-    loading_location_message.hide(500);
+    loading_location_message.hide();
     location_not_found_message.show(500);
-    map_container.css("visibility","visible");
+    map_container.show();
 
     var latitude = 40.1950631;
     var longitude = -8.419715912072775;
 
     document.getElementById('latitude').value = latitude;
     document.getElementById('longitude').value = longitude;
+
+    google.maps.event.trigger(Gmaps.map.map, 'resize');
 
     var latLng = new google.maps.LatLng(latitude, longitude);
     placeMarker(latLng);
