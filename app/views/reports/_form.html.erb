@@ -54,7 +54,7 @@
     </div>
 
 
-    <div id="problem" class="control-group">
+    <div id="problem" class="control-group" style="visibility: hidden">
       <%= gmaps({
                         :map_options => {
                                 :auto_zoom => false,
@@ -144,8 +144,8 @@
         </script>
     <% end %>
     <div id="submit-form-actions" class="form-actions">
-      <%= link_to_function t(:send), 'send_report()' ,:class => 'btn btn-danger btn-large' %>
-      <%= link_to t(:back), root_path, :class => 'btn' %>
+      <%= link_to t(:back), root_path, :class => 'btn btn-large' %>
+      <%= link_to_function t(:send), 'send_report()' ,:class => 'btn btn-success btn-large' %>
     </div>
 
 <% end %>
