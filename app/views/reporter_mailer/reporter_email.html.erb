@@ -7,7 +7,7 @@
 <p>
   <b><%= t(:reported_problem) %>:</b>
 </p>
-<p><%= @report.description %></p>
+<p style="white-space: pre-wrap"><%= @report.description %></p>
 <br/>
 <p>
   Usa este link para marcar o problema como resolvido: <%= link_to t(:edit_report), edit_report_url(@report, :token => @report.token) %>

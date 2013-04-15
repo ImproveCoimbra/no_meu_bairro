@@ -4,7 +4,8 @@
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
 </head>
 <body>
-<p><b><%= t(:new_reported_problem) %>: <%= @report.description %></b></p>
+<p><b><%= t(:new_reported_problem) %>:</b><p/>
+<p style="white-space: pre-wrap"><%= @report.description %></p>
 
 <p>
   <%= t(:view_more_information) %>:  <%= link_to t(:report), report_url(@report) %> . .
