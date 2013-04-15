@@ -10,7 +10,8 @@ class ReporterMailer < ActionMailer::Base
   end
 
   def truncate(text)
-    text[0..17] + (text.size > 17 ? '...' : '')
+    clean_text = text.gsub(/\r\n/,' ').gsub(/\r/,' ')
+    clean_text[0..17] + (clean_text.size > 17 ? '...' : '')
   end
 
 end
