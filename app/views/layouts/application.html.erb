@@ -19,8 +19,19 @@
   <link rel="apple-touch-icon-precomposed" href="<%= image_path('/img/b-medium.png') %>" />
 
 
+
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <% if Rails.env == 'production' %>
     <script type="text/javascript">
         var _gaq = _gaq || [];
@@ -64,7 +75,15 @@
     <div class="row-fluid">
       <div class="span12">
         <p><%= link_to t(:about), :controller => :front, :action => 'about' %> |
-          <a href="http://improve.madeincoimbra.org">Made in Improve Coimbra</a></p>
+          <a href="http://improve.madeincoimbra.org">Made in Improve Coimbra</a> | Like
+        <span class="fb-like"
+             data-href="http://www.facebook.com/pages/No-meu-Bairro/510598865669972"
+             data-send="false"
+             data-layout="button_count"
+             data-width="450"
+             data-show-faces="false"
+             data-font="lucida grande">
+        </span>
       </div>
     </div>
   </div>
