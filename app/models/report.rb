@@ -35,6 +35,9 @@ class Report
   before_create :find_municipality, :convert_location, :generate_token, :update_confirmation
   after_create :bitch
 
+
+  scope :coimbra, where(:municipality => Municipality.where(:ost_id => "379").first()).desc(:created_at)
+
   def generate_token
     token = SecureRandom.urlsafe_base64
     while Report.where(:token => token).exists?
