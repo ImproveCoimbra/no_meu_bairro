@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+</head>
+<body>
+<p>
+  <b><%= t(:reported_problem) %>:</b>
+</p>
+<p style="white-space: pre-wrap"><%= @report.description %></p>
+<br/>
+<p>
+  Dentro de alguns dias iremos marcar este problema como resolvido.<br/>
+  Caso ainda não esteja resolvido, podes usar este link para extender o tempo: <%= link_to t(:edit_report), edit_report_url(@report, :token => @report.token) %>
+</p>
+
+</body>
+</html>

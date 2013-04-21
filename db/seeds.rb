@@ -8,5 +8,13 @@
 
 
 Municipality.create(ost_id: 379,
-                    name: "Coimbra",
-                    driver_str: "CoimbraPortugalBitchingDriver")
+                    name: 'Coimbra',
+                    driver_str: 'SendMailReportDriver',
+                    driver_parameters: {
+                        destination_name: 'CMC',
+                        destination_mail: 'geral@cm-coimbra.pt'
+                    }
+)
+
+
+
