@@ -92,13 +92,21 @@ class Report
   end
 
   def bitch
+    threads = []
+
     if self.municipality.try(:driver)
-      self.municipality.driver.new(self).notify rescue nil
+      threads << Thread.new do
+        self.municipality.driver.new(self).notify rescue nil
+      end
+
     end
     if self.user && !self.user.uuid.blank?
-      ReporterMailer.reporter_email(self).deliver
+      threads << Thread.new do
+        ReporterMailer.reporter_email(self).deliver
+      end
     end
 
+    threads.each(&:join)
   end
 
   def mark_as_solved
