@@ -2,23 +2,23 @@
 
 <table class="table table-bordered table-hover">
   <thead>
-    <tr>
-      <th><%= t(:municipality) %></th>
-      <th><%= t(:description) %></th>
-      <th></th>
-    <!--<th></th>   -->
-    </tr>
+  <tr>
+    <th><%= t(:municipality) %></th>
+    <th><%= t(:description) %></th>
+    <th></th>
+    <!--<th></th>-->
+  </tr>
   </thead>
 
   <tbody>
-    <% @reports.each do |report| %>
+  <% @reports.each do |report| %>
       <tr>
         <td><%= report.municipality.name %></td>
         <td style="white-space: pre-wrap"><%= report.description %></td>
         <td><%= link_to t(:more_information), report %></td>
-     <!--<td><%# link_to t(:edit_report), edit_report_path(report, :token => report.token) %></td>-->
+        <!--<td><%# link_to t(:edit_report), edit_report_path(report, :token => report.token) %></td>-->
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 
