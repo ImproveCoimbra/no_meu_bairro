@@ -11,6 +11,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'paperclip', :git => 'git://github.com/gfelisberto/paperclip.git'
 gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
 gem 'aws-s3',            :require => 'aws/s3'
 gem 'aws-sdk'

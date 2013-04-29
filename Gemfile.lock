@@ -1,3 +1,14 @@
+GIT
+  remote: git://github.com/gfelisberto/paperclip.git
+  revision: e7503f0f120ab0930f6d11b16180fe14a9c44d2a
+  specs:
+    paperclip (3.4.1)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.0)
+      mime-types
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -38,7 +49,10 @@ GEM
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     builder (3.0.4)
-    cocaine (0.4.2)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.1)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -80,12 +94,6 @@ GEM
     nokogiri (1.5.6)
     nokogiri (1.5.6-x86-mingw32)
     origin (1.0.11)
-    paperclip (3.4.0)
-      activemodel (>= 3.0.0)
-      activerecord (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (~> 0.4.0)
-      mime-types
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -152,6 +160,7 @@ DEPENDENCIES
   mimetype-fu
   mongoid
   mongoid-paperclip
+  paperclip!
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
   therubyracer
