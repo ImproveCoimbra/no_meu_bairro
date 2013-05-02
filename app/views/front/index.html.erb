@@ -37,13 +37,15 @@
                                     {
                                             :randomize => true,
                                             :max_random_distance => 10
+
                                     }
                     },
             :map_options =>
                     {
                             :container_class => 'map-container hidden-phone',
-                            :raw => '{styles: myStyle}'
-
+                            :raw => '{styles: myStyle}',
+                            #TODO Read from configuration somewhere
+                            :language => 'pt', :hl => 'pt', :region => 'pt'
                     }) %>
 
 </div>

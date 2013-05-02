@@ -43,14 +43,14 @@ jQuery(function ($) {
     for (var i = 0; i <  this.markers.length; ++i) {
       var marker = Gmaps.map.markers[i];
 
-      var onMarkerClick = function onMarkerClick(marker, event){
-        return function(event){
+      var onMarkerClick = function onMarkerClick(marker){
+        return function(){
           window.location = marker.link;
         }
       };
 
       // Click on marker to open show view
-      google.maps.event.addListener(marker.serviceObject, 'click', onMarkerClick(marker, event));
+      google.maps.event.addListener(marker.serviceObject, 'click', onMarkerClick(marker));
     }
   };
 
