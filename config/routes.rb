@@ -4,5 +4,6 @@ Bitchingserver::Application.routes.draw do
   end
   resources :municipalities, :only => [:index, :show]
   match 'about' => 'front#about'
+  match 'faq' => 'front#faq'
   root :to => 'front#index'
 end
