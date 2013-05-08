@@ -7,7 +7,7 @@ jQuery(function ($) {
 
   if ($("#home").length == 0) { return; } // Only run on homepage
 
-  function update() {
+  function updateOpenInMobileImage() {
     var height = Math.min($(window).height() * 0.8, $(window).width() * 0.8);
     var width  = height;
 
@@ -21,8 +21,34 @@ jQuery(function ($) {
   var throttleTimer;
   $(window).resize(function(){
     clearTimeout(throttleTimer);
-    throttleTimer = setTimeout(update, 100);
+    throttleTimer = setTimeout(updateOpenInMobileImage, 100);
   });
 
-  update();
+  updateOpenInMobileImage();
+
+  // Gmaps4Rails update markers based on window
+  function updateMarkers() {
+    //Gmaps.map.adjustMapToBounds();
+
+    var sw = Gmaps.map.map.getBounds().getSouthWest();
+    var ne = Gmaps.map.map.getBounds().getNorthEast();
+
+    console.log(sw) // debug log - these coordinates are changing after each marker replacement
+
+    var data = {"northEast": ne.toUrlValue(15), "southWest": sw.toUrlValue(15)};
+
+    $.getJSON('/reports.json', data, function(json){
+
+      Gmaps.map.replaceMarkers(json);
+    });
+  }
+
+  Gmaps.map.callback = function() {
+
+    // Map fully loaded here
+    google.maps.event.addListenerOnce(Gmaps.map.serviceObject, 'idle', updateMarkers);
+
+    google.maps.event.addListener(Gmaps.map.serviceObject, 'bounds_changed', updateMarkers);
+  }
+
 });
