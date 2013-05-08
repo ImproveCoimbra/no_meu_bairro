@@ -5,13 +5,33 @@ class ReportsController < ApplicationController
   # GET /reports?mine=true
   # GET /reports.json
   def index
-    if params[:mine].try(:to_bool)
-      @reports = Report.where(
-          :user => User.find_by(:uuid => request.headers[CLIENT_IDENTIFIER_KEY])
-      ).desc(:created_at)
+
+    #   state   = params[:state]   if params[:state].present?
+
+
+    north_east = params[:northEast].split(',') if params[:northEast].present?
+    south_west = params[:southWest].split(',') if params[:southWest].present?
+
+    if north_east.present? && south_west.present?
+
+      north_east.collect! { |x| x.to_f }
+      south_west.collect! { |x| x.to_f }
+      #Google uses LatLng, Mongo uses LngLat
+      north_east.reverse!
+      south_west.reverse!
+      @reports = Report.where(:coordinates => {"$within" => {"$box" => [north_east, south_west]}})
     else
       @reports = Report.all.desc(:created_at)
     end
+
+
+    #if params[:mine].try(:to_bool)
+    #  @reports = Report.where(
+    #      :user => User.find_by(:uuid => request.headers[CLIENT_IDENTIFIER_KEY])
+    #  ).desc(:created_at)
+    #else
+    #  @reports = Report.all.desc(:created_at)
+    #end
 
     respond_to do |format|
       format.html # index.html.erb
