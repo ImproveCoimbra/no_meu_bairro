@@ -36,7 +36,7 @@ class Report
   after_create :bitch
 
 
-  scope :coimbra, where(:municipality => Municipality.where(:ost_id => "379").first()).desc(:created_at)
+  scope :coimbra, where(:municipality => Municipality.where(:ost_id => "379").first()).asc(:created_at)
 
   def generate_token
     token = SecureRandom.urlsafe_base64

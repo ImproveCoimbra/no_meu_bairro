@@ -19,7 +19,7 @@ class ReportsController < ApplicationController
       #Google uses LatLng, Mongo uses LngLat
       north_east.reverse!
       south_west.reverse!
-      @reports = Report.where(:coordinates => {"$within" => {"$box" => [north_east, south_west]}})
+      @reports = Report.where(:coordinates => {'$within' => {'$box' => [south_west, north_east]}})
     else
       @reports = Report.all.desc(:created_at)
     end
