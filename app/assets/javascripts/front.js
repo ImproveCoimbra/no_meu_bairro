@@ -36,19 +36,22 @@ jQuery(function ($) {
         var sw = bounds.getSouthWest();
         var ne = bounds.getNorthEast();
 
+        console.log("Current SW" + sw); // debug log - these coordinates are changing after each marker replacement
+        console.log("Current NE" + ne); // debug log - these coordinates are changing after each marker replacement
+
+
         // || (currentBounds.contains(sw) && currentBounds.contains(ne))
         if (currentBounds != null &&
             (currentBounds.contains(sw) && currentBounds.contains(ne)) ) {
             //Nothing to do
+            console.log("Inside currentBounds");
             return;
         }
 
-        console.log("Current SW" + sw); // debug log - these coordinates are changing after each marker replacement
-        console.log("Current NE" + ne); // debug log - these coordinates are changing after each marker replacement
-
-        //Generic function could be simplified
-        var latDiff = Math.sqrt((sw.lat() - ne.lat()) ^ 2);
-        var lngDiff = Math.sqrt((sw.lng() - ne.lng()) ^ 2);
+        var latDiff = Math.abs(sw.lat() - ne.lat());
+        var lngDiff = Math.abs(sw.lng() - ne.lng());
+        console.log("LatDiff: "+ latDiff);
+        console.log("LngDiff: "+ lngDiff);
 
         //Move the corners in the direction by half the size
         bounds = new google.maps.LatLngBounds(
@@ -66,7 +69,6 @@ jQuery(function ($) {
         var data = {"northEast": ne.toUrlValue(15), "southWest": sw.toUrlValue(15)};
 
         $.getJSON('/reports.json', data, function (json) {
-
             Gmaps.map.replaceMarkers(json, false);
         });
     }
