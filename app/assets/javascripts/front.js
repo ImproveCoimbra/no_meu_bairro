@@ -67,7 +67,7 @@ jQuery(function ($) {
 
         $.getJSON('/reports.json', data, function (json) {
 
-            Gmaps.map.replaceMarkers(json);
+            Gmaps.map.replaceMarkers(json, false);
         });
     }
 
