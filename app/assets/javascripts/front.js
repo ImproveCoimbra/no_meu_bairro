@@ -70,6 +70,16 @@ jQuery(function ($) {
 
         $.getJSON('/reports.json', data, function (json) {
             Gmaps.map.replaceMarkers(json, false);
+            for (var i = 0; i < Gmaps.map.markers.length; ++i) {
+                var marker = Gmaps.map.markers[i];
+                var onMarkerClick = function onMarkerClick(marker) {
+                    return function () {
+                        window.location = marker.link;
+                    }
+                };
+                // Click on marker to open show view
+                google.maps.event.addListener(marker.serviceObject, 'click', onMarkerClick(marker));
+            }
         });
     }
 
