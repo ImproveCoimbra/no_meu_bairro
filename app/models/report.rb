@@ -36,7 +36,9 @@ class Report
   after_create :bitch
 
 
-  scope :coimbra, where(:municipality => Municipality.where(:ost_id => "379").first()).asc(:created_at)
+  #The correct scope for Coimbra would be the Municipality, but we use location to have a smaller Map
+  #scope :coimbra, where(:municipality => Municipality.where(:ost_id => "379").first()).asc(:created_at)
+  scope :coimbra, where(:coordinates => {'$within' => {'$box' => [[-8.921616737389286, 40.10956171052814], [-8.343146888756473, 40.2397146010789] ]}})
 
   def generate_token
     token = SecureRandom.urlsafe_base64
