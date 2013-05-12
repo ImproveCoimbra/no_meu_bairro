@@ -32,7 +32,7 @@
 
   <%= gmaps(:markers =>
                     {
-                            :data => @reports,
+                            :data => [],
                             :options =>
                                     {
                                             :randomize => true,
@@ -44,7 +44,10 @@
                             :container_class => 'map-container hidden-phone',
                             :raw => '{styles: myStyle}',
                             #TODO Read from configuration somewhere
-                            :language => 'pt', :hl => 'pt', :region => 'pt'
+                            :language => 'pt', :hl => 'pt', :region => 'pt',
+                            :center_latitude => 40.20119879996395,
+                            :center_longitude => -8.426894545555115,
+                            :zoom => 13
                     }) %>
 
 </div>
