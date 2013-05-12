@@ -35,7 +35,13 @@ class ReportsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @reports.to_gmaps4rails }
+      format.json {
+        @reports = @reports.to_gmaps4rails do |report, marker|
+          marker.title report.description
+          marker.json({:link => report_url(report)})
+        end
+        render json: @reports
+      }
       format.xml { render xml: @reports }
     end
   end
