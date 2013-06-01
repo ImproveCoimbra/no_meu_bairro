@@ -85,7 +85,7 @@ jQuery(function ($) {
 
   Gmaps.map.callback = function() {
 
-    Gmaps.map.markers_conf.do_clustering = true;
+    //Gmaps.map.markers_conf.do_clustering = true;
     // Map fully loaded here
 
     google.maps.event.addListenerOnce(Gmaps.map.serviceObject, 'idle', updateMarkers);
