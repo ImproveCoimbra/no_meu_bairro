@@ -8,8 +8,14 @@
 <p style="white-space: pre-wrap"><%= @report.description %></p>
 
 <p>
-  <%= t(:view_more_information) %>:  <%= link_to t(:report), report_url(@report) %> . .
+  <%= t(:view_more_information) %>:  <%= link_to t(:report), report_url(@report) %>.
 </p>
+
+<!--
+<p>
+  Para referência em contactos futuros por favor indicar o valor: <%= @report._id %>
+</p>
+-->
 
 </body>
 </html>
