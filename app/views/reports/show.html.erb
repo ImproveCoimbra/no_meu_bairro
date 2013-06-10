@@ -46,7 +46,7 @@ end %>
      <!--   <small><%= @report.coordinates %></small> -->
       </dd>
     </dl>
-
+<% if !@report.photos.blank? %>
     <h3><%= t(:photo).pluralize(2) %>:</h3>
 
     <ul class="thumbnails">
@@ -68,9 +68,19 @@ end %>
       <% end %>
     </ul>
 
+<% end %>
+
+    <p>
+	<div class="fb-comments" class="row-fluid" data-href="http://<%= request.host+request.fullpath %>" data-num-posts="10">
+</div>    </p>
+
+
     <p>
       <a href="javascript:history.back()" class="btn">« <%= t(:back) %></a>
     </p>
 
+
   </div>
+</div>
+
 </div>
