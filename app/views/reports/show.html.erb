@@ -71,16 +71,14 @@ end %>
 <% end %>
 
     <p>
-	<div class="fb-comments" class="row-fluid" data-href="http://<%= request.host+request.fullpath %>" data-num-posts="10">
-</div>    </p>
 
+    <div class="fb-comments" class="row-fluid" data-href="http://<%= request.host+request.fullpath %>" data-num-posts="10">
+    </div>
 
-    <p>
-      <a href="javascript:history.back()" class="btn">« <%= t(:back) %></a>
+    <br/>
+    <a href="javascript:history.back()" class="btn">« <%= t(:back) %></a>
     </p>
 
 
   </div>
-</div>
-
 </div>
