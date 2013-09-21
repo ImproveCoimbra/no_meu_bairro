@@ -20,8 +20,12 @@ end %>
       <dt><%= t(:description) %>:</dt>
       <dd style="white-space: pre-wrap"><%= @report.description %></dd>
       <dt><%= t(:creation_date) %>: </dt><dd><%= @report.created_at.strftime('%Y-%m-%d %H:%M') %></dd>
-      <% unless @report.closure_date.blank? %>
-          <dt><%= t(:resolution_date) %>:</dt><dd> <%= @report.closure_date.strftime('%Y-%m-%d %H:%M') %></dd>
+      <% if !@report.closure_date.blank? and @report.closure_type == 'user' %>
+          <dt><%= t(:resolution_date) %>:</dt>
+          <dd> <%= @report.closure_date.strftime('%Y-%m-%d %H:%M') %></dd>
+      <% elsif !@report.closure_date.blank? and @report.closure_type == 'rake_task' %>
+          <dt><%= t(:auto_resolution_date) %>:</dt>
+          <dd> <%= @report.closure_date.strftime('%Y-%m-%d %H:%M') %></dd>
       <% end %>
       <dt><%= t(:location) %>:</dt>
       <dd>

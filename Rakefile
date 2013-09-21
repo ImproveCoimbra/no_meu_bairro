@@ -50,11 +50,9 @@ task :remark_old_auto_as_rake => :environment do
       :closure_date.exists => true
   )
 
-
-
   reports_closed.each do |report|
-
-    if report.closure_date.hour == 9 and report.closure_date.minute == 0
+    if (report.closure_date.hour == 9 and report.closure_date.minute == 0) or
+        (report.closure_date.hour == 10 and report.closure_date.minute == 0)
       report.closure_type = 'rake_task'
     else
       report.closure_type = 'user'
