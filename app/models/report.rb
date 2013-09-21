@@ -10,6 +10,7 @@ class Report
   field :description, type: String
   field :coordinates, type: Array
   field :closure_date, type: DateTime
+  field :closure_type, type: String
   field :last_reporter_confirmation, type: DateTime
   field :client_ip, type: String
   field :token, type: String
@@ -38,7 +39,7 @@ class Report
 
   #The correct scope for Coimbra would be the Municipality, but we use location to have a smaller Map
   #scope :coimbra, where(:municipality => Municipality.where(:ost_id => "379").first()).asc(:created_at)
-  scope :coimbra, where(:coordinates => {'$within' => {'$box' => [[-8.921616737389286, 40.10956171052814], [-8.343146888756473, 40.2397146010789] ]}})
+  scope :coimbra, where(:coordinates => {'$within' => {'$box' => [[-8.921616737389286, 40.10956171052814], [-8.343146888756473, 40.2397146010789]]}})
 
   def generate_token
     token = SecureRandom.urlsafe_base64
@@ -111,8 +112,9 @@ class Report
     threads.each(&:join)
   end
 
-  def mark_as_solved
+  def mark_as_solved(closure_type)
     self.closure_date = DateTime.now
+    self.closure_type = closure_type
   end
 
   def lixo
@@ -130,12 +132,19 @@ class Report
           :width => 32,
           :height => 32
       }
-    else
+    elsif self.closure_type == 'user'
       {
           :picture => 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
           :width => 32,
           :height => 32
       }
+    else
+      {
+          :picture => 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+          :width => 32,
+          :height => 32
+      }
+
     end
   end
 

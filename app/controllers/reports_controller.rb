@@ -120,7 +120,7 @@ class ReportsController < ApplicationController
   # PUT /reports/1.json
   def update
     @report = Report.find_by(:id => params[:id], :token => params[:report][:token])
-    @report.mark_as_solved
+    @report.mark_as_solved('user')
     @report.save
     respond_to do |format|
       if @report.save
