@@ -29,16 +29,33 @@ end
 
 desc 'Find reports that have not been changed in a couple of weeks and close them'
 task :expire_old => :environment do
-  reports_to_expire = Report.where(
-      closure_date: nil,
-      last_reporter_confirmation: {'$lte' => (Date.today - 16)}
+  reports_to_expire = Report
+  .where(created_at: {'$lte' => (Date.today - 16)}, closure_date: nil)
+  .any_of(
+      {last_reporter_confirmation: {'$lte' => (Date.today - 16)}},
+      {last_reporter_confirmation: nil}
   )
 
   reports_to_expire.each do |report|
-    unless report.user.uuid.blank?
-      report.mark_as_solved('rake_task')
-      report.save
-    end
+    report.mark_as_solved('rake_task')
+    report.save
+  end
+end
+
+
+desc 'Add missing fields to reports'
+task :clean_old => :environment do
+  reports_to_clean = Report.where({:closure_date.exists => false})
+
+  reports_to_clean.each do |report|
+    report.set(:closure_date, nil)
+  end
+
+
+  reports_to_clean = Report.where({:last_reporter_confirmation.exists => false})
+
+  reports_to_clean.each do |report|
+    report.set(:last_reporter_confirmation, nil)
   end
 
 
