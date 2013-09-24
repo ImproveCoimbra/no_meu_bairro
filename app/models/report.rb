@@ -125,27 +125,19 @@ class Report
   end
 
   def gmaps4rails_marker_picture
-
+    result = {
+      :width => 32,
+      :height => 32
+    }
     if self.closure_date.nil?
-      {
-          :picture => 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-          :width => 32,
-          :height => 32
-      }
+      image_name = 'red-dot.png'
     elsif self.closure_type == 'user'
-      {
-          :picture => 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-          :width => 32,
-          :height => 32
-      }
+      image_name = 'green-dot.png'
     else
-      {
-          :picture => 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
-          :width => 32,
-          :height => 32
-      }
-
+      image_name = 'yellow-dot.png'
     end
+    result[:picture] = ActionController::Base.new.view_context.asset_path(image_name)
+    result
   end
 
 end
