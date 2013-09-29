@@ -28,7 +28,7 @@
 
           <%= f.hidden_field :token %>
           <% extend_text  = @report.closure_date ==nil ? t(:extend_time): t(:not_solved) %>
-          <%= f.submit extend_text, :class => 'btn btn-warning btn-large' if @report.closure_date == nil ||
+          <%= f.submit extend_text, :class => 'btn btn-danger btn-large' if @report.closure_date == nil ||
                   (@report.closure_date != nil && @report.closure_type != 'user') %>
 
       <% end %>
