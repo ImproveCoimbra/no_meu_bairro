@@ -21,23 +21,28 @@
 
 
     <div class="form-actions">
-      <%= form_for(@report, :url=> extend_report_path(@report), :html => {:multipart => true, :class => 'form-horizontal'}) do |f| %>
+      <%= form_for(@report, :url=> extend_report_path(@report), :html => {:multipart => true, :class => 'form-horizontal', :style=>'float:left;margin: 10px;'
+
+
+      }) do |f| %>
 
           <%= f.hidden_field :token %>
           <%= f.submit t(:extend_time), :class => 'btn btn-warning btn-large' if @report.closure_date == nil ||
                   (@report.closure_date != nil && @report.closure_type != 'user') %>
 
       <% end %>
-      <%= form_for(@report, :html => {:multipart => true, :class => 'form-horizontal'}) do |f| %>
+      <%= form_for(@report, :html => {:multipart => true, :class => 'form-horizontal', :style=>'float:left;margin: 10px;'
+      }) do |f| %>
 
           <%= f.hidden_field :token %>
           <%= f.submit t(:mark_as_solved), :class => 'btn btn-success btn-large' if @report.closure_date == nil ||
                   (@report.closure_date != nil && @report.closure_type != 'user') %>
       <% end %>
+      <br/>
 
-      <%= link_to t(:back), :back, :class => 'btn' %>
     </div>
 
+    <%= link_to t(:back), :back, :class => 'btn' %>
 
   </div>
 </div>
