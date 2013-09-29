@@ -52,6 +52,8 @@ class Report
   end
 
   def update_confirmation
+    self.closure_type = nil
+    self.closure_date = nil
     self.last_reporter_confirmation = DateTime.now
   end
 
