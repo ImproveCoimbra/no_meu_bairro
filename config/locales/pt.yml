@@ -68,3 +68,7 @@ pt:
   extended_faq_title: "Perguntas frequentes"
   auto_resolution_date: "Fecho automático"
   not_solved: "Ainda não resolvido"
+  legend_red_dot: "Problema ainda em aberto que não se encontra resolvido"
+  legend_yellow_dot: "Problema em que não conheçemos o estado"
+  legend_green_dot: "Problema que já se encontra resolvido"
+  legend: "Legenda"

@@ -91,6 +91,12 @@ jQuery(function ($) {
     google.maps.event.addListenerOnce(Gmaps.map.serviceObject, 'idle', updateMarkers);
 
     google.maps.event.addListener(Gmaps.map.serviceObject, 'bounds_changed', updateMarkers);
+
+
+
+
+      // Add Legend to MAP
+      Gmaps.map.serviceObject.controls[google.maps.ControlPosition.RIGHT_CENTER].push(document.getElementById("map_legend"));
   }
 
 });

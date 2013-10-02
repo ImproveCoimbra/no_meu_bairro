@@ -49,3 +49,7 @@ en:
   extended_faq_title: "F.A.Q."
   auto_resolution_date: "Auto closure date"
   not_solved: "Still not solved"
+  legend_red_dot: "Open problem still not resolved"
+  legend_yellow_dot: "Unknown status on problem"
+  legend_green_dot: "Problem that has been solved"
+  legend: "Legend"
