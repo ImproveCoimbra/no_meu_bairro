@@ -96,7 +96,7 @@ jQuery(function ($) {
 
 
       // Add Legend to MAP
-      Gmaps.map.serviceObject.controls[google.maps.ControlPosition.RIGHT_CENTER].push(document.getElementById("map_legend"));
+      Gmaps.map.serviceObject.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById("map_legend"));
   }
 
 });
