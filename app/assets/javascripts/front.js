@@ -3,68 +3,70 @@
 // You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery(function ($) {
-  "use strict";
+    "use strict";
 
-  if ($("#home").length == 0) { return; } // Only run on homepage
+    if ($("#home").length == 0) {
+        return;
+    } // Only run on homepage
 
-  function updateOpenInMobileImage() {
-    var height = Math.min($(window).height() * 0.8, $(window).width() * 0.8);
-    var width  = height;
+    function updateOpenInMobileImage() {
+        var height = Math.min($(window).height() * 0.8, $(window).width() * 0.8);
+        var width = height;
 
-    $('.modal-fluid img').css("height", height);
-    $('.modal-fluid img').css("width", width);
-    $('.modal-fluid').css("width", width);
-    $('.modal-fluid').css("height", height);
-    $('.modal-fluid').css("left", $(window).width()/2 - $('.modal-fluid').width()/2);
-  }
+        $('.modal-fluid img').css("height", height);
+        $('.modal-fluid img').css("width", width);
+        $('.modal-fluid').css("width", width);
+        $('.modal-fluid').css("height", height);
+        $('.modal-fluid').css("left", $(window).width() / 2 - $('.modal-fluid').width() / 2);
+    }
 
-  var throttleTimer;
-  $(window).resize(function(){
-    clearTimeout(throttleTimer);
-    throttleTimer = setTimeout(updateOpenInMobileImage, 100);
-  });
+    var throttleTimer;
+    $(window).resize(function () {
+        clearTimeout(throttleTimer);
+        throttleTimer = setTimeout(updateOpenInMobileImage, 100);
+    });
 
-  updateOpenInMobileImage();
+    updateOpenInMobileImage();
 
-  var currentBounds;
+    var currentBounds;
 
-  // Gmaps4Rails update markers based on window
+    // Gmaps4Rails update markers based on window
     function updateMarkers() {
         //Gmaps.map.adjustMapToBounds();
-        var bounds= Gmaps.map.map.getBounds();
+        var bounds = Gmaps.map.map.getBounds();
 
         var sw = bounds.getSouthWest();
         var ne = bounds.getNorthEast();
 
-        console.log("Current SW" + sw); // debug log - these coordinates are changing after each marker replacement
-        console.log("Current NE" + ne); // debug log - these coordinates are changing after each marker replacement
+        //console.log("Current SW" + sw); // debug log - these coordinates are changing after each marker replacement
+        //console.log("Current NE" + ne); // debug log - these coordinates are changing after each marker replacement
 
 
         // || (currentBounds.contains(sw) && currentBounds.contains(ne))
         if (currentBounds != null &&
-            (currentBounds.contains(sw) && currentBounds.contains(ne)) ) {
+            (currentBounds.contains(sw) && currentBounds.contains(ne))) {
             //Nothing to do
-            console.log("Inside currentBounds");
+            //console.log("Inside currentBounds");
             return;
         }
 
         var latDiff = Math.abs(sw.lat() - ne.lat());
         var lngDiff = Math.abs(sw.lng() - ne.lng());
-        console.log("LatDiff: "+ latDiff);
-        console.log("LngDiff: "+ lngDiff);
+        //console.log("LatDiff: " + latDiff);
+        //console.log("LngDiff: " + lngDiff);
 
         //Move the corners in the direction by half the size
         bounds = new google.maps.LatLngBounds(
-            new google.maps.LatLng(sw.lat() - latDiff/2, sw.lng() - lngDiff/2),
-            new google.maps.LatLng(ne.lat() + latDiff/2, ne.lng() + lngDiff/2)
+            new google.maps.LatLng(sw.lat() - latDiff / 2, sw.lng() - lngDiff / 2),
+            new google.maps.LatLng(ne.lat() + latDiff / 2, ne.lng() + lngDiff / 2)
         );
 
         sw = bounds.getSouthWest();
         ne = bounds.getNorthEast();
 
         currentBounds = bounds;
-        console.log("SW" + sw); // debug log - these coordinates are changing after each marker replacement
-        console.log("NE" + ne); // debug log - these coordinates are changing after each marker replacement
+        //console.log("SW" + sw); // debug log - these coordinates are changing after each marker replacement
+        //console.log("NE" + ne); // debug log - these coordinates are changing after each marker replacement
 
         var data = {"northEast": ne.toUrlValue(15), "southWest": sw.toUrlValue(15)};
 
@@ -74,6 +76,10 @@ jQuery(function ($) {
                 var marker = Gmaps.map.markers[i];
                 var onMarkerClick = function onMarkerClick(marker) {
                     return function () {
+                        var c = Gmaps.map.serviceObject.getCenter();
+                        var toStorage = c.lat() + ';'
+                            + c.lng() + ';' + Gmaps.map.serviceObject.getZoom();
+                        $.cookie('MAPCenter', toStorage);
                         window.location = marker.link;
                     }
                 };
@@ -83,20 +89,29 @@ jQuery(function ($) {
         });
     }
 
-  Gmaps.map.callback = function() {
+    Gmaps.map.callback = function () {
 
-    //Gmaps.map.markers_conf.do_clustering = true;
-    // Map fully loaded here
+        //Gmaps.map.markers_conf.do_clustering = true;
+        // Map fully loaded here
 
-    google.maps.event.addListenerOnce(Gmaps.map.serviceObject, 'idle', updateMarkers);
+        google.maps.event.addListenerOnce(Gmaps.map.serviceObject, 'idle', updateMarkers);
 
-    google.maps.event.addListener(Gmaps.map.serviceObject, 'bounds_changed', updateMarkers);
-
-
+        google.maps.event.addListener(Gmaps.map.serviceObject, 'bounds_changed', updateMarkers);
 
 
-      // Add Legend to MAP
-      Gmaps.map.serviceObject.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById("map_legend"));
-  }
+        // Add Legend to MAP
+        Gmaps.map.serviceObject.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById("map_legend"));
+
+
+        var previousLocation = $.cookie('MAPCenter');
+        if (previousLocation) {
+            $.removeCookie('MAPCenter')
+            previousLocation = previousLocation.split(';')
+            var latLng = new google.maps.LatLng(previousLocation[0], previousLocation[1]);
+            Gmaps.map.serviceObject.setCenter(latLng);
+            Gmaps.map.serviceObject.setZoom(parseFloat(previousLocation[2]));
+        }
+
+    }
 
 });

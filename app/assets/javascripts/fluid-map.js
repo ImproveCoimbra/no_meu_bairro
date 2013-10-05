@@ -48,6 +48,10 @@ jQuery(function ($) {
 
             var onMarkerClick = function onMarkerClick(marker) {
                 return function () {
+                    var c = Gmaps.map.serviceObject.getCenter();
+                    var toStorage = c.lat() + ';'
+                        + c.lng() + ';' + Gmaps.map.serviceObject.getZoom();
+                    $.cookie('MAPCenter', toStorage);
                     window.location = marker.link;
                 }
             };
@@ -56,6 +60,4 @@ jQuery(function ($) {
             google.maps.event.addListener(marker.serviceObject, 'click', onMarkerClick(marker));
         }
     };
-
-
 });
