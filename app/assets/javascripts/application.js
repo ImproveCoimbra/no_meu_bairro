@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery.cookie
+//= require jquery.storageapi.min
 //= require jquery_ujs
 //= require_tree ./lib
 //= require_tree .

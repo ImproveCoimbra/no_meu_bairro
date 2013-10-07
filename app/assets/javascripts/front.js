@@ -79,7 +79,7 @@ jQuery(function ($) {
                         var c = Gmaps.map.serviceObject.getCenter();
                         var toStorage = c.lat() + ';'
                             + c.lng() + ';' + Gmaps.map.serviceObject.getZoom();
-                        $.cookie('MAPCenter', toStorage);
+                        $.sessionStorage.set('MAPCenter', toStorage);
                         window.location = marker.link;
                     }
                 };
@@ -103,10 +103,10 @@ jQuery(function ($) {
         Gmaps.map.serviceObject.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById("map_legend"));
 
 
-        var previousLocation = $.cookie('MAPCenter');
-        if (previousLocation) {
-            $.removeCookie('MAPCenter')
-            previousLocation = previousLocation.split(';')
+        var previousLocation = $.sessionStorage.get('MAPCenter');
+        if (previousLocation != null) {
+            $.sessionStorage.set('MAPCenter', null);
+            previousLocation = previousLocation.split(';');
             var latLng = new google.maps.LatLng(previousLocation[0], previousLocation[1]);
             Gmaps.map.serviceObject.setCenter(latLng);
             Gmaps.map.serviceObject.setZoom(parseFloat(previousLocation[2]));

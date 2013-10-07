@@ -51,7 +51,7 @@ jQuery(function ($) {
                     var c = Gmaps.map.serviceObject.getCenter();
                     var toStorage = c.lat() + ';'
                         + c.lng() + ';' + Gmaps.map.serviceObject.getZoom();
-                    $.cookie('MAPCenter', toStorage);
+                    $.sessionStorage.set('MAPCenter', toStorage);
                     window.location = marker.link;
                 }
             };
