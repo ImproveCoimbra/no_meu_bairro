@@ -1,3 +1,4 @@
 <%= t(:new_reported_problem) %>: <%= @report.description %>
 <%= t(:for_more_information_visit) %>: <%= report_url(@report) %> .
 Para referência em contactos futuros por favor indicar o código: <%= @report._id %>
+Caso não seja indicado o código:  <%= @report._id %> nas respostas que nos enviarem não poderemos acompanhar o processo.
