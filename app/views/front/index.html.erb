@@ -31,37 +31,31 @@
   </header>
 
   <div style="display: none;">
-    <div id="map_legend" style="padding: 10px; background: #f1f3f4; margin-right: 15px; opacity:0.9;">
-      <h3><%= t(:legend) %></h3>
-
-      <p><%= image_tag('red-dot.png') %> <%= t(:legend_red_dot) %></p>
-
+    <div id="map-legend">
+      <h5>Problema:</h5>
+      <p><%= image_tag('red-dot.png')    %> <%= t(:legend_red_dot)    %></p>
       <p><%= image_tag('yellow-dot.png') %> <%= t(:legend_yellow_dot) %></p>
-
-      <p><%= image_tag('green-dot.png') %> <%= t(:legend_green_dot) %></p>
+      <p><%= image_tag('green-dot.png')  %> <%= t(:legend_green_dot)  %></p>
     </div>
   </div>
 
-  <%= gmaps(:markers =>
-                    {
-                            :data => [],
-                            :options =>
-                                    {
-                                            :randomize => true,
-                                            :max_random_distance => 1
-                                    }
-                    },
-            :map_options =>
-                    {
-                            :container_class => 'map-container hidden-phone',
-                            :raw => '{styles: myStyle}',
-                            #TODO Read from configuration somewhere
-                            :language => 'pt', :hl => 'pt', :region => 'pt',
-                            :center_latitude => 40.20119879996395,
-                            :center_longitude => -8.426894545555115,
-                            :zoom => 13
-                    }) %>
-
+  <%= gmaps(:markers => {
+              :data => [],
+              :options => {
+                :randomize => true,
+                :max_random_distance => 1
+              }
+            },
+            :map_options => {
+              :container_class => 'map-container hidden-phone',
+              :raw => '{styles: myStyle}',
+              #TODO Read from configuration somewhere
+              :language => 'pt', :hl => 'pt', :region => 'pt',
+              :center_latitude => 40.20119879996395,
+              :center_longitude => -8.426894545555115,
+              :zoom => 13
+            })
+    %>
 
 </div>
 <% end %>
