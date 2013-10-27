@@ -156,7 +156,7 @@ DEPENDENCIES
   aws-s3
   aws-sdk
   coffee-rails (~> 3.2.1)
-  gmaps4rails
+  gmaps4rails (= 1.5.6)
   httparty
   jquery-cookie-rails
   jquery-rails (= 2.1.4)
