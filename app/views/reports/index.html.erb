@@ -5,8 +5,10 @@
   <tr>
     <th><%= t(:municipality) %></th>
     <th><%= t(:description) %></th>
+    <th><%= t(:state) %></th>
+    <th><%= t(:latitude) %></th>
+    <th><%= t(:longitude) %></th>
     <th></th>
-    <!--<th></th>-->
   </tr>
   </thead>
 
@@ -15,8 +17,28 @@
       <tr>
         <td><%= report.municipality.name unless report.municipality.nil? %></td>
         <td style="white-space: pre-wrap"><%= report.description %></td>
-        <td><%= link_to t(:more_information), report %></td>
+
         <!--<td><%# link_to t(:edit_report), edit_report_path(report, :token => report.token) %></td>-->
+
+        <% if report.closure_date.nil? %>
+            <td>
+              <%= t(:legend_red_dot).capitalize_sentence %></td>
+        <% else
+             if  report.closure_type == 'user' %>
+                <td>
+                  <%= t(:legend_green_dot).capitalize_sentence %></td>
+            <% else %>
+
+                <td>
+                  <%= t(:legend_yellow_dot).capitalize_sentence %></td>
+            <% end %>
+        <% end %>
+
+
+        <td><%= report.latitude %></td>
+        <td><%= report.longitude %></td>
+
+        <td><%= link_to t(:more_information), report %></td>
       </tr>
   <% end %>
   </tbody>

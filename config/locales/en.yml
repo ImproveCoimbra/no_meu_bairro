@@ -53,3 +53,7 @@ en:
   legend_yellow_dot: "Unknown status on problem"
   legend_green_dot: "Problem that has been solved"
   legend: "Legend"
+  state: "State"
+  latitude_longitude: "Latitude - Longitude"
+  latitude: "Latitude"
+  longitude: "Longitude"

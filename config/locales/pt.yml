@@ -72,3 +72,7 @@ pt:
   legend_yellow_dot: "em estado desconhecido"
   legend_green_dot: "já resolvido"
   legend: "Legenda"
+  state: "Estado"
+  latitude_longitude: "Latitude - Longitude"
+  latitude: "Latitude"
+  longitude: "Longitude"

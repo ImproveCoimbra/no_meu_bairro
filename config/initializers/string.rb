@@ -5,4 +5,9 @@ class String
     return false if self == false || self.blank? || self =~ (/\A(false|f|no|n|0)\Z/i)
     raise ArgumentError.new("invalid value for Boolean: \"#{self}\"")
   end
+
+  def capitalize_sentence
+    self.slice(0,1).capitalize + self.slice(1..-1)
+  end
+
 end
