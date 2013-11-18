@@ -32,11 +32,23 @@ function foundLocation(position) {
     document.getElementById('latitude').value = latitude;
     document.getElementById('longitude').value = longitude;
 
-    google.maps.event.trigger(Gmaps.map.map, 'resize');
+
 
     var latLng = new google.maps.LatLng(latitude, longitude);
     placeMarker(latLng);
+    centerMapOnLocation(latitude, longitude);
+
+}
+
+function centerMapOnLocation(latitude, longitude, zoomLevel) {
+    if(typeof zoomLevel != 'undefined') {
+        Gmaps.map.map.setZoom(zoomLevel);
+    }
+
+    //alert(zoomLevel);
+    var latLng = new google.maps.LatLng(latitude, longitude);
     Gmaps.map.map.setCenter(latLng);
+    google.maps.event.trigger(Gmaps.map.map, 'resize');
 }
 
 
