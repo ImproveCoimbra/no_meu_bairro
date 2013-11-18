@@ -91,7 +91,9 @@ jQuery(function ($) {
 
     Gmaps.map.callback = function () {
 
-        //Gmaps.map.markers_conf.do_clustering = true;
+        Gmaps.map.markers_conf.do_clustering = true;
+        Gmaps.map.markers_conf.clusterer_gridSize = 20; // Change this until it clusters as desired (bigger == larger clusters)
+        Gmaps.map.markers_conf.clusterer_maxZoom  = 15; // After this zoom level, all clusters are removed
         // Map fully loaded here
 
         google.maps.event.addListenerOnce(Gmaps.map.serviceObject, 'idle', updateMarkers);
