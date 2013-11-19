@@ -3,6 +3,7 @@
 <table class="table table-bordered table-hover">
   <thead>
   <tr>
+    <th><%= t(:creation_date) %></th>
     <th><%= t(:municipality) %></th>
     <th><%= t(:description) %></th>
     <th><%= t(:state) %></th>
@@ -15,6 +16,7 @@
   <tbody>
   <% @reports.each do |report| %>
       <tr>
+        <td><%= I18n.localize(report.created_at.to_date, :format => :long) %></td>
         <td><%= report.municipality.name unless report.municipality.nil? %></td>
         <td style="white-space: pre-wrap"><%= report.description %></td>
 

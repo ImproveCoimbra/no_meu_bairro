@@ -93,7 +93,7 @@ jQuery(function ($) {
 
         Gmaps.map.markers_conf.do_clustering = true;
         Gmaps.map.markers_conf.clusterer_gridSize = 20; // Change this until it clusters as desired (bigger == larger clusters)
-        Gmaps.map.markers_conf.clusterer_maxZoom  = 15; // After this zoom level, all clusters are removed
+        Gmaps.map.markers_conf.clusterer_maxZoom = 20; // After this zoom level, all clusters are removed
         // Map fully loaded here
 
         google.maps.event.addListenerOnce(Gmaps.map.serviceObject, 'idle', updateMarkers);
@@ -115,5 +115,32 @@ jQuery(function ($) {
         }
 
     }
-
+    /**
+     Gmaps.map.customClusterer = function () {
+        var url = "http://gmaps-utility-library.googlecode.com/svn/trunk/markerclusterer/1.0/images/";
+        return [
+            {
+                textSize: 10,
+                textColor: '#ff0000',
+                url: url + 'heart30.png',
+                height: 26,
+                width: 30
+            },
+            {
+                textSize: 14,
+                textColor: '#ffff00',
+                url: url + 'heart40.png',
+                height: 35,
+                width: 40
+            },
+            {
+                textSize: 18,
+                textColor: '#0000ff',
+                url: url + 'heart50.png',
+                width: 50,
+                height: 44
+            }
+        ];
+    };
+     */
 });

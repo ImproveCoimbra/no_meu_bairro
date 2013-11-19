@@ -32,12 +32,8 @@
 
   <div style="display: none;">
     <div id="map-legend">
-      <h5>Problema:</h5>
-      <p><%= image_tag('red-dot.png')    %> <%= t(:legend_red_dot)    %></p>
-      <p><%= image_tag('yellow-dot.png') %> <%= t(:legend_yellow_dot) %></p>
-      <p><%= image_tag('green-dot.png')  %> <%= t(:legend_green_dot)  %></p>
 
-      <h6>Cidade:</h6>
+      <h6>À procura de outra cidade:</h6>
 
       <form>
         <select onchange=" var target = this.value.split(';');
@@ -48,6 +44,10 @@
           <option value="38.754811181431535;-9.13465591147542;12">Lisboa</option>
         </select>
       </form>
+      <h5>Problema:</h5>
+      <p><%= image_tag('red-dot.png')    %> <%= t(:legend_red_dot)    %></p>
+      <p><%= image_tag('yellow-dot.png') %> <%= t(:legend_yellow_dot) %></p>
+      <p><%= image_tag('green-dot.png')  %> <%= t(:legend_green_dot)  %></p>
     </div>
   </div>
 
