@@ -17,124 +17,128 @@ body {
 }
 
 h1, h2 {
-  font-family: 'Arbutus Slab', serif;
-  font-weight: normal;
-  text-align: center;
+    font-family: 'Arbutus Slab', serif;
+    font-weight: normal;
+    text-align: center;
 }
 
 h1, h1 a {
-  color: #A84038;
+    color: #A84038;
 }
 
 h2 {
-  font-size: 50px;
-  line-height: 60px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+    font-size: 50px;
+    line-height: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 em {
-  font-style: normal;
-  font-weight: bold;
-  color: #A84038;
+    font-style: normal;
+    font-weight: bold;
+    color: #A84038;
 }
 
 header {
-  background-color: #D1E8F0;
-  text-align: center;
-  padding: 10px 0;
-  box-shadow: inset 0 -1px 3px rgba(0, 0, 0, 0.3);
-  h1 {
-    font-size: 32px;
-    a:hover, a:active, a:visited {
-      color: #A84038;
+    background-color: #D1E8F0;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: inset 0 -1px 3px rgba(0, 0, 0, 0.3);
+    h1 {
+        font-size: 32px;
+        a:hover, a:active, a:visited {
+            color: #A84038;
+        }
     }
-  }
 }
 
 #home {
-  header {
-    padding: 10px 0;
-    h1 {
-      font-size: 80px;
-      line-height: 80px;
-      margin-bottom: 20px;
+    header {
+        padding: 5px 0;
+        h1 {
+            font-size: 40px;
+            line-height: 35px;
+            margin-bottom: 0px;
+        }
+        h2 {
+            font-size: 25px;
+            line-height: 20px;
+            margin-bottom: 10px;
+        }
+        .visible-desktop h6 {
+            margin-bottom: 0px;
+
+            a {
+                color: #B25349;
+            }
+            a:hover {
+                color: #A84038;
+            }
+        }
+
+        .modal.full-image {
+            max-width: 630px;
+            max-height: 630px;
+
+            button {
+                position: absolute;
+                right: 6px;
+            }
+            img {
+                height: 630px;
+                width: 630px;
+                max-height: 630px;
+                max-width: 630px;
+            }
+        }
+
+        .modal.modal-fluid {
+            margin-left: 0px;
+        }
     }
-    h2 {
-      font-size: 31.5px;
-      line-height: 40px;
-      margin-bottom: 20px;
-    }
-    .visible-desktop h6 {
-      margin-bottom: 0px;
 
-      a       { color: #B25349; }
-      a:hover { color: #A84038; }
+    #map {
+        width: 100%;
+        height: 300px;
     }
 
-    .modal.full-image {
-      max-width: 630px;
-      max-height: 630px;
-
-      button {
-        position: absolute;
-        right: 6px;
-      }
-      img {
-        height: 630px;
-        width:  630px;
-        max-height: 630px;
-        max-width: 630px;
-      }
+    .map_container {
+        width: 100%;
     }
 
-    .modal.modal-fluid {
-      margin-left: 0px;
+    #map-legend {
+        padding: 5px 10px;
+        background: #FFFFFF;
+        opacity: 0.95;
+        filter: alpha(opacity=95);
+        -webkit-border-top-left-radius: 5px;
+        -webkit-border-bottom-left-radius: 5px;
+        -moz-border-radius-topleft: 5px;
+        -moz-border-radius-bottomleft: 5px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        margin-bottom: 10px;
+
+        h5, p {
+            margin: 5px 0;
+        }
+        p {
+            font-size: 12px;
+        }
     }
-  }
-
-  #map {
-    width: 100%;
-    height: 300px;
-  }
-
-  .map_container {
-    width: 100%;
-  }
-
-  #map-legend {
-    padding: 5px 10px;
-    background: #FFFFFF;
-    opacity: 0.95;
-    filter: alpha(opacity=95);
-    -webkit-border-top-left-radius: 5px;
-    -webkit-border-bottom-left-radius: 5px;
-    -moz-border-radius-topleft: 5px;
-    -moz-border-radius-bottomleft: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    margin-bottom: 10px;
-
-    h5, p {
-      margin: 5px 0;
-    }
-    p {
-      font-size: 12px;
-    }
-  }
 
 }
 
 #about {
-  p {
-    font-size: 22px;
-    line-height: 30px;
-    margin-bottom: 20px;
-    &.actions {
-      text-align: center;
-      margin-top: 30px;
+    p {
+        font-size: 22px;
+        line-height: 30px;
+        margin-bottom: 20px;
+        &.actions {
+            text-align: center;
+            margin-top: 30px;
+        }
     }
-  }
 
     li {
         font-size: 22px;
@@ -142,9 +146,8 @@ header {
     }
 }
 
-
 #faq {
-    dt,dd {
+    dt, dd {
         font-size: 22px;
         line-height: 30px;
         margin-bottom: 20px;
@@ -155,59 +158,59 @@ header {
 }
 
 #problem {
-  dd {
-    margin-bottom: 20px;
-  }
-  .map_container {
-    height: 300px;
-    #map {
-      height: 100%;
+    dd {
+        margin-bottom: 20px;
     }
-  }
+    .map_container {
+        height: 300px;
+        #map {
+            height: 100%;
+        }
+    }
 }
 
 .status_message, .help-inline {
-  color: #999;
+    color: #999;
 }
 
 footer {
-  padding: 10px 0;
-  text-align: center;
-  a, a:hover, a:visited, a:active {
-    color: gray;
-  }
-  p {
-    margin: 5px 0px;
-  }
+    padding: 10px 0;
+    text-align: center;
+    a, a:hover, a:visited, a:active {
+        color: gray;
+    }
+    p {
+        margin: 5px 0px;
+    }
 }
 
 // Responsive
 
 @media (max-width: 480px) {
-  h2 {
-    font-size: 35px;
-    line-height: 40px;
-    margin-top: 20px;
-    margin-bottom: 40px;
-  }
-
-  #home {
-    header {
-      h1 {
-        font-size: 40px;
+    h2 {
+        font-size: 35px;
         line-height: 40px;
-        margin-bottom: 20px;
-      }
-      h2 {
-        font-size: 25px;
-        line-height: 30px;
-        margin-bottom: 20px;
-      }
+        margin-top: 20px;
+        margin-bottom: 40px;
     }
-  }
+
+    #home {
+        header {
+            h1 {
+                font-size: 30px;
+                line-height: 35px;
+                margin-bottom: 10px;
+            }
+            h2 {
+                font-size: 15px;
+                line-height: 20px;
+                margin-bottom: 10px;
+            }
+        }
+    }
 
 }
 
 .fb-comments, .fb-comments * {
-    width:100% !important;
+    width: 100% !important;
 }
