@@ -12,6 +12,14 @@ class ReportsController < ApplicationController
     north_east = params[:northEast].split(',') if params[:northEast].present?
     south_west = params[:southWest].split(',') if params[:southWest].present?
 
+
+    search_expressions = {}
+
+    if  params[:filterOld].present? && params[:filterOld].to_bool
+      search_expressions[:created_at] = {'$gte' => (60.days.ago)}
+    end
+
+
     if north_east.present? && south_west.present?
 
       north_east.collect! { |x| x.to_f }
@@ -19,10 +27,10 @@ class ReportsController < ApplicationController
       #Google uses LatLng, Mongo uses LngLat
       north_east.reverse!
       south_west.reverse!
-      @reports = Report.where(:coordinates => {'$within' => {'$box' => [south_west, north_east]}})
-    else
-      @reports = Report.all.desc(:created_at)
+      search_expressions[:coordinates] = {'$within' => {'$box' => [south_west, north_east]}}
     end
+
+    @reports = Report.where(search_expressions).desc(:created_at)
 
 
     #if params[:mine].try(:to_bool)
