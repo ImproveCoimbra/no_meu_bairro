@@ -5,7 +5,12 @@ class ReportMailer < ActionMailer::Base
   def report_email(report)
     @report = report
     name_and_mail_destination = "#{report.municipality.driver_parameters["destination_name"]} <#{report.municipality.driver_parameters["destination_mail"]}>"
-    mail(:to => name_and_mail_destination, :subject => "Problema (#{report.municipality.name}) - #{truncate(report.description)}")
+    cc = ''
+    if report.municipality.driver_parameters["alternate_destination_name"] && report.municipality.driver_parameters["alternate_destination_mail"]
+      cc = "#{report.municipality.driver_parameters["alternate_destination_name"]} <#{report.municipality.driver_parameters["alternate_destination_mail"]}>"
+    end
+
+    mail(:to => name_and_mail_destination, :cc => cc, :subject => "Problema (#{report.municipality.name}) - #{truncate(report.description)}")
   end
 
   def truncate(text)
