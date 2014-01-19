@@ -79,6 +79,25 @@ end %>
     <div class="fb-comments" class="row-fluid" data-href="http://<%= request.host+request.fullpath %>" data-num-posts="10">
     </div>
 
+
+    <script type="application/javascript" charset="utf-8">
+
+        window.onload = function () {
+            // In your onload method
+            FB.Event.subscribe('comment.create', comment_callback);
+        };
+
+
+        // In your JavaScript
+        var comment_callback = function(response) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", "<%= @report.id %>"  + "/comment_added.json",true);
+            xmlhttp.send();
+        }
+
+    </script>
+
+
     <br/>
     <a href="javascript:history.back()" class="btn">« <%= t(:back) %></a>
     </p>

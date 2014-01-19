@@ -123,6 +123,13 @@ class ReportsController < ApplicationController
     end
   end
 
+  # PUT /reports/1/comment_added
+  # PUT /reports/1/comment_added.json
+  def comment_added
+    @report = Report.find_by(:id => params[:id])
+    @report.notify_comment_added
+    render :nothing => true
+  end
 
   # PUT /reports/1
   # PUT /reports/1.json

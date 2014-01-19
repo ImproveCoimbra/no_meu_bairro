@@ -14,7 +14,7 @@ class Report
   field :last_reporter_confirmation, type: DateTime
   field :client_ip, type: String
   field :token, type: String
-
+  field :last_comment_date, type: DateTime
 
   index({coordinates: "2d"})
 
@@ -122,14 +122,14 @@ class Report
   def lixo
     first_loc = [80.24958300000003, 13.060422]
     second_loc = [81.24958300000003, 12.060422]
-    reports = Report.where(:coordinates => {"$within" => {"$box" => [first_loc, second_loc]}})
+    reports = Report.where(:coordinates => {'$within' => {'$box' => [first_loc, second_loc]}})
     reports[0].coordinates
   end
 
   def gmaps4rails_marker_picture
     result = {
-      :width => 32,
-      :height => 32
+        :width => 32,
+        :height => 32
     }
     if self.closure_date.nil?
       image_name = 'red-dot.png'
@@ -140,6 +140,24 @@ class Report
     end
     result[:picture] = ActionController::Base.new.view_context.asset_path(image_name)
     result
+  end
+
+
+  def notify_comment_added
+    # Prevent spam
+
+    if Rails.env.production? && !self.last_comment_date.nil? && self.last_comment_date > 1.hour.ago
+      return
+    end
+    self.last_comment_date = DateTime.now
+    save
+
+    if self.user && !self.user.uuid.blank?
+
+      ReporterCommentMailer.reporter_comment_email(self).deliver
+
+    end
+
   end
 
 end
