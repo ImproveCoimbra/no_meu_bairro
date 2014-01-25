@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+</head>
+<body>
+
+<p>
+  Foi adicionado um ou mais comentários no problema que reportou. Para os consultar visite a <%= link_to 'página', report_url(@report) %>.<br/>
+
+  Pode editar o problema visitando: <%= link_to t(:edit_report), edit_report_url(@report, :token => @report.token) %>
+</p>
+
+</body>
+</html>
