@@ -126,6 +126,7 @@ class ReportsController < ApplicationController
   # PUT /reports/1/comment_added
   # PUT /reports/1/comment_added.json
   def comment_added
+    puts 'Got comment_added request for: ' + params[:id]
     @report = Report.find_by(:id => params[:id])
     @report.notify_comment_added
     render :nothing => true

@@ -146,7 +146,8 @@ class Report
   def notify_comment_added
     # Prevent spam
 
-    if Rails.env.production? && !self.last_comment_date.nil? && self.last_comment_date > 1.hour.ago
+    if !self.last_comment_date.nil? && self.last_comment_date > 1.hour.ago
+      puts 'Not notifying reporter because last_comment_date is: ' + self.last_comment_date.strftime('%FT%T%:z')
       return
     end
     self.last_comment_date = DateTime.now
