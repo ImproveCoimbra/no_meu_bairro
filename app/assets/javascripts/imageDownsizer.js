@@ -4,8 +4,8 @@ TODO:
 - Find a way to not upload the actual inputs if the downsize works!
 */
 
-var MAX_WIDTH = 200;
-var MAX_HEIGHT = 300;
+var MAX_WIDTH = 1024;
+var MAX_HEIGHT = 768;
 
 function isCanvasSupported(){
   var elem = document.createElement('canvas');
