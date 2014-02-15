@@ -140,9 +140,10 @@
                 $("#new_report").children().hide();
                 $("#submit-in-progress").show();
 
-                addSmallerImagesToForm(function () {
-                    $("#new_report").submit();    
-                });
+                addSmallerImagesToForm()
+                    .always(function () {
+                        $("#new_report").submit();
+                    });
             }
         </script>
     <% end %>
