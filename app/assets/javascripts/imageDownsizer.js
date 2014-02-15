@@ -1,13 +1,6 @@
-/**
-TODO:
-- Test it!
-- Find a way to not upload the actual inputs if the downsize works!
-- Only remove the regular inputs if the smaller ones work well
-- If the images already are smaller than the maxes do nothing!
-*/
-
 var MAX_WIDTH = 1024;
 var MAX_HEIGHT = 768;
+var IS_DOWNSIZE_ENABLED = false;
 
 function isCanvasSupported(){
   var elem = document.createElement('canvas');
@@ -23,7 +16,7 @@ if (isCanvasSupported()) {
 function addSmallerImagesToForm () {
 	var $fileInputs, $newReport;
 
-	if (!window.FileReader || !isCanvasSupported() || !canvas.toDataURL) {
+	if (!window.FileReader || !isCanvasSupported() || !canvas.toDataURL || !IS_DOWNSIZE_ENABLED) {
 		return $.Deferred().resolve();
 	}
 
@@ -38,7 +31,12 @@ function addSmallerImagesToForm () {
 		files = $fileInput[0].files;
 
 		if (files.length > 0 && files[0].type.match(/image.*/)) {
-			return addSmallerImage($fileInput, $newReport, files[0]);
+			return addSmallerImage($fileInput, $newReport, files[0])
+				.then(function () {
+					if (IS_DOWNSIZE_ENABLED) {
+						$fileInput[0].value = null;						
+					}
+				});
 		}
 
 		return $.Deferred().resolve();
