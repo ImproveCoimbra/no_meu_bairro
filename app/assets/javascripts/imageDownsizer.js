@@ -2,6 +2,8 @@
 TODO:
 - Test it!
 - Find a way to not upload the actual inputs if the downsize works!
+- Only remove the regular inputs if the smaller ones work well
+- If the images already are smaller than the maxes do nothing!
 */
 
 var MAX_WIDTH = 1024;
