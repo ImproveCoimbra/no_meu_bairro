@@ -27,6 +27,7 @@ pt:
   for_more_information_visit: "Para consultar mais informação visite"
   app_name: "No meu bairro"
   mission_statement: "Ajuda a resolver os problemas do teu bairro"
+  stats: "Estatísticas"
 
 
   mongoid:
@@ -76,3 +77,6 @@ pt:
   latitude_longitude: "Latitude - Longitude"
   latitude: "Latitude"
   longitude: "Longitude"
+  mean_resolution_time: "Tempo de resolução (em média)"
+  total: "Total"
+  days: "dias"
