@@ -1,0 +1,97 @@
+<h2><%= t(:stats) %></h2>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= t(:municipality) %></th>
+      <th><%= t(:reported_problems) %></th>
+      <th><%= t(:legend_red_dot) %></th>
+      <th><%= t(:legend_green_dot) %></th>
+      <th><%= t(:legend_yellow_dot) %></th>
+      <th><%= t(:mean_resolution_time) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @grouped_reports.each do |municipality, reports| %>
+      <tr>
+        <td><%= municipality.try(:name) %></td>
+        <%
+          total = reports.size
+          open = reports.count{|report| report.closure_date.nil?}
+          fixed = reports.count{|report| report.closure_type == 'user'}
+          uncertain = reports.count{|report| !report.closure_date.nil? and report.closure_type != 'user'}
+          if fixed > 0
+            time_to_fix = (reports.select{|r|r.closure_type == 'user'}.map{|r|(r.closure_date-r.created_at.to_datetime).to_i}.sum.to_f / fixed).round
+          end
+        %>
+        <td><%= total %></td>
+        <td><%= (open.to_f / total * 100).round %>% (<%= open %>)</td>
+        <td><%= (fixed.to_f / total * 100).round %>% (<%= fixed %>)</td>
+        <td><%= (uncertain.to_f / total * 100).round %>% (<%= uncertain %>)</td>
+        <td><%= pluralize(time_to_fix, t(:days)) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td><strong>Total</strong></td>
+      <%
+        total = @reports.size
+        open = @reports.count{|report| report.closure_date.nil?}
+        fixed = @reports.count{|report| report.closure_type == 'user'}
+        uncertain = @reports.count{|report| !report.closure_date.nil? and report.closure_type != 'user'}
+        if fixed > 0
+          time_to_fix = (@reports.select{|r|r.closure_type == 'user'}.map{|r|(r.closure_date-r.created_at.to_datetime).to_i}.sum.to_f / fixed).round
+        end
+      %>
+      <td><%= total %></td>
+      <td><%= (open.to_f / @reports.size * 100).round %>% (<%= open %>)</td>
+      <td><%= (fixed.to_f / @reports.size * 100).round %>% (<%= fixed %>)</td>
+      <td><%= (uncertain.to_f / @reports.size * 100).round %>% (<%= uncertain %>)</td>
+      <td><%= pluralize(time_to_fix, t(:days)) %></td>
+    </tr>
+  </tfoot>
+</table>
+
+<div id="container" style="min-width: 310px; height: 250px; margin: 40px auto"></div>
+
+<% content_for :scripts do %>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<%
+  @months = ActiveSupport::OrderedHash.new
+  @reports.each do |report|
+    key = report.created_at.strftime "%m/%Y"
+    @months[key] ||= []
+    @months[key] << report
+  end
+%>
+
+<script>
+$(function () {
+  $('#container').highcharts({
+    chart: {
+      type: 'column'
+    },
+    title: {
+      text: '<%= t(:reported_problems) %>'
+    },
+    xAxis: {
+      categories: [
+        '<%= @months.keys.join("','").html_safe %>'
+      ]
+    },
+    yAxis: {
+      min: 0,
+      title: {
+        text: ''
+      }
+    },
+    series: [{
+      name: '<%= t(:reported_problems) %>',
+      data: [<%= @months.values.map(&:size).map(&:to_s).join(",") %>]
+    }]
+  });
+});
+</script>
+<% end %>
