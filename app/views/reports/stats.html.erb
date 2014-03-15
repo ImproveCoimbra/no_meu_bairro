@@ -13,42 +13,26 @@
   </thead>
   <tbody>
     <% @grouped_reports.each do |municipality, reports| %>
+      <% stats = reports_stats(reports) %>
       <tr>
         <td><%= municipality.try(:name) %></td>
-        <%
-          total = reports.size
-          open = reports.count{|report| report.closure_date.nil?}
-          fixed = reports.count{|report| report.closure_type == 'user'}
-          uncertain = reports.count{|report| !report.closure_date.nil? and report.closure_type != 'user'}
-          if fixed > 0
-            time_to_fix = (reports.select{|r|r.closure_type == 'user'}.map{|r|(r.closure_date-r.created_at.to_datetime).to_i}.sum.to_f / fixed).round
-          end
-        %>
-        <td><%= total %></td>
-        <td><%= (open.to_f / total * 100).round(1) %>% (<%= open %>)</td>
-        <td><%= (fixed.to_f / total * 100).round(1) %>% (<%= fixed %>)</td>
-        <td><%= (uncertain.to_f / total * 100).round(1) %>% (<%= uncertain %>)</td>
-        <td><%= pluralize(time_to_fix, t(:days)) %></td>
+        <td><%= stats[:total] %></td>
+        <td><%= display_percentage(stats[:open], stats[:total] ) %></td>
+        <td><%= display_percentage(stats[:fixed], stats[:total] ) %></td>
+        <td><%= display_percentage(stats[:uncertain], stats[:total] ) %></td>
+        <td><%= pluralize(stats[:time_to_fix], t(:days)) %></td>
       </tr>
     <% end %>
   </tbody>
   <tfoot>
     <tr>
+      <% stats = reports_stats(@reports) %>
       <td><strong><%= t(:total) %></strong></td>
-      <%
-        total = @reports.size
-        open = @reports.count{|report| report.closure_date.nil?}
-        fixed = @reports.count{|report| report.closure_type == 'user'}
-        uncertain = @reports.count{|report| !report.closure_date.nil? and report.closure_type != 'user'}
-        if fixed > 0
-          time_to_fix = (@reports.select{|r|r.closure_type == 'user'}.map{|r|(r.closure_date-r.created_at.to_datetime).to_i}.sum.to_f / fixed).round
-        end
-      %>
-      <td><%= total %></td>
-      <td><%= (open.to_f / @reports.size * 100).round(1) %>% (<%= open %>)</td>
-      <td><%= (fixed.to_f / @reports.size * 100).round(1) %>% (<%= fixed %>)</td>
-      <td><%= (uncertain.to_f / @reports.size * 100).round(1) %>% (<%= uncertain %>)</td>
-      <td><%= pluralize(time_to_fix, t(:days)) %></td>
+      <td><%= stats[:total] %></td>
+      <td><%= display_percentage(stats[:open], stats[:total] ) %></td>
+      <td><%= display_percentage(stats[:fixed], stats[:total] ) %></td>
+      <td><%= display_percentage(stats[:uncertain], stats[:total] ) %></td>
+      <td><%= pluralize(stats[:time_to_fix], t(:days)) %></td>
     </tr>
   </tfoot>
 </table>
@@ -58,7 +42,7 @@
 <% content_for :scripts do %>
   <script src="http://code.highcharts.com/highcharts.js"></script>
   <script src="http://code.highcharts.com/modules/exporting.js"></script>
-  <% @months = group_reports_by_month(@reports) %>
+  <% months = group_reports_by_month(@reports) %>
   <script>
     $(function () {
       $('#container').highcharts({
@@ -70,7 +54,7 @@
         },
         xAxis: {
           categories: [
-            '<%= @months.keys.join("','").html_safe %>'
+            '<%= months.keys.join("','").html_safe %>'
           ]
         },
         yAxis: {
@@ -81,7 +65,7 @@
         },
         series: [{
           name: '<%= t(:reported_problems) %>',
-          data: [<%= @months.values.map(&:size).map(&:to_s).join(",") %>]
+          data: [<%= months.values.map(&:size).map(&:to_s).join(",") %>]
         }]
       });
     });
