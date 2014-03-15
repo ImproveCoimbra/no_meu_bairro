@@ -73,16 +73,21 @@
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="span12">
-        <p><%= link_to t(:about), :controller => :front, :action => 'about' %> | <%= link_to t(:extended_faq_title), :controller => :front, :action => 'faq' %> |
-          <a href="http://improve.madeincoimbra.org">Made in Improve Coimbra</a> | <%= t(:share) %>
-        <span class="fb-like"
-             data-href="http://www.facebook.com/pages/No-meu-Bairro/510598865669972"
-             data-send="false"
-             data-layout="button_count"
-             data-width="450"
-             data-show-faces="false"
-             data-font="lucida grande">
-        </span>
+        <p>
+          <%= link_to t(:about), :controller => :front, :action => 'about' %> &bull; 
+          <%= link_to t(:extended_faq_title), :controller => :front, :action => 'faq' %> &bull; 
+          <%= link_to t(:stats), stats_reports_path %> &bull; 
+          <a href="http://improve.madeincoimbra.org">Made in Improve Coimbra</a> &bull; 
+          <%= t(:share) %>
+          <span class="fb-like"
+               data-href="http://www.facebook.com/pages/No-meu-Bairro/510598865669972"
+               data-send="false"
+               data-layout="button_count"
+               data-width="450"
+               data-show-faces="false"
+               data-font="lucida grande">
+          </span>
+        </p>
       </div>
     </div>
   </div>

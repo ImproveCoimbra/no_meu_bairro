@@ -8,4 +8,14 @@ module ReportsHelper
     link_to_function(name, "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")", :class => 'btn btn-small')
   end
 
+  def group_reports_by_month(reports)
+    months = ActiveSupport::OrderedHash.new
+    reports.each do |report|
+      key = report.created_at.strftime "%m/%Y"
+      months[key] ||= []
+      months[key] << report
+    end
+    months
+  end
+
 end
