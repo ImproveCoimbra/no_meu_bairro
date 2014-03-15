@@ -61,7 +61,7 @@ class ReportsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @report }
+      format.json { render json: @report.as_json(:except => [:token]) }
     end
   end
 

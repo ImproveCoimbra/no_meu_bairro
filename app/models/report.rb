@@ -1,9 +1,10 @@
 # encoding: UTF-8
-
+require 'categories'
 class Report
   include Mongoid::Document
   include Mongoid::Paranoia
   include Mongoid::Timestamps
+  # include Categories
 
   store_in collection: "reports"
 
@@ -15,6 +16,7 @@ class Report
   field :client_ip, type: String
   field :token, type: String
   field :last_comment_date, type: DateTime
+
 
   index({coordinates: "2d"})
 
@@ -75,12 +77,16 @@ class Report
 
 
   # Methods
-  def as_json(ctx)
-    super(:include => {:photos => {:only => [:_id], :methods => :styles}}, :except => [:client_ip, :token])
+  def as_json(options={})
+    options = {
+        :include => {:photos => {:only => [:_id], :methods => :styles}},
+        :except => [:client_ip, :user_id] + options[:except]
+    }
+    super(options)
   end
 
   def to_xml(options={})
-    options.merge!(:include => {:photos => {:only => [:_id], :methods => :styles}}, :except => [:client_ip, :token])
+    options.merge!(:include => {:photos => {:only => [:_id], :methods => :styles}}, :except => [:client_ip, :token, :user_id])
     super(options)
   end
 
