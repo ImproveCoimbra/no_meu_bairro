@@ -54,6 +54,11 @@ class ReportsController < ApplicationController
     end
   end
 
+  def stats
+    @reports = Report.all.asc(:created_at)
+    @grouped_reports = @reports.group_by(&:municipality)
+  end
+
   # GET /reports/1
   # GET /reports/1.json
   def show
