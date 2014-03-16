@@ -1,0 +1,31 @@
+# Add application configuration variables here
+
+
+# Database
+development:
+  MONGODB_URI: mongodb://dev_user:dev_password@server:port/dev_instance
+
+production:
+  MONGODB_URI: mongodb://prd_user:prd_password@server:port/prd_instance
+
+
+# Gmail
+
+GMAIL_USERNAME: username@gmail.com
+GMAIL_PASSWORD: password
+SMTP: smtp.gmail.com
+SMTP_PORT: 587
+
+# Amazon S3
+
+AMAZON_ACCESS_KEY_ID: AMAZON_ACCESS_KEY_ID
+AMAZON_SECRET_ACCESS_KEY: AMAZON_ACCESS_KEY_ID
+AMAZON_BUCKET: bucket
+
+# OST
+
+OST_API_KEY: TAyMyJAVrtlfuSYHKVqsafElbctGcPPmbRSIyJfC
+
+# RAILS
+
+RAILS_SECRET_TOKEN: b819b51b0bbfebfa13b60e870d77f0a8283e962a12c6087efa0ca7e02135ebaa60806cb9f7400d1323e70375a7a6a12840ae8c06efcb250f3d4b80c297e91676
