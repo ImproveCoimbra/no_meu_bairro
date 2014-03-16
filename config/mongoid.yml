@@ -1,0 +1,33 @@
+production:
+  sessions:
+    default:
+      uri: <%= ENV["MONGODB_URI"] %>
+      options:
+        safe: true
+  options:
+    raise_not_found_error: false
+    identity_map_enabled: true
+
+development:
+  sessions:
+    default:
+      uri: <%= ENV["MONGODB_URI"] %>
+      options:
+              safe: true
+
+  options:
+    raise_not_found_error: false
+    identity_map_enabled: true
+
+
+
+test:
+  sessions:
+    default:
+      database: bitching_test
+      hosts:
+        - localhost:27017
+      options:
+        safe: true
+  options:
+    raise_not_found_error: false

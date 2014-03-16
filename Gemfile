@@ -26,3 +26,5 @@ gem 'gmaps4rails', '1.5.6'
 gem 'httparty'
 
 gem 'therubyracer', :platform => :ruby
+
+gem 'figaro'

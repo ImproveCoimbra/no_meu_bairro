@@ -62,6 +62,9 @@ GEM
     coffee-script-source (1.7.0)
     erubis (2.7.0)
     execjs (2.0.2)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     gmaps4rails (1.5.6)
     hike (1.2.3)
     httparty (0.13.0)
@@ -157,6 +160,7 @@ DEPENDENCIES
   aws-s3
   aws-sdk
   coffee-rails (~> 3.2.1)
+  figaro
   gmaps4rails (= 1.5.6)
   httparty
   jquery-cookie-rails
