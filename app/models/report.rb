@@ -1,5 +1,5 @@
 # encoding: UTF-8
-require 'categories'
+# require 'categories'
 class Report
   include Mongoid::Document
   include Mongoid::Paranoia
