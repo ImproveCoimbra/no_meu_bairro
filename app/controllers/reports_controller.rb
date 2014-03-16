@@ -56,7 +56,7 @@ class ReportsController < ApplicationController
 
   def stats
     @reports = Report.all.asc(:created_at)
-    @grouped_reports = @reports.group_by(&:municipality)
+    @grouped_reports = @reports.group_by(&:municipality).sort_by {|k,v| v}
   end
 
   # GET /reports/1

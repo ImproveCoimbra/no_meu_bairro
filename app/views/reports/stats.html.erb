@@ -13,16 +13,21 @@
   </thead>
   <tbody>
     <% @grouped_reports.each do |municipality, reports| %>
-      <% stats = reports_stats(reports) %>
-      <tr>
-        <td><%= municipality.try(:name) %></td>
-        <td><%= stats[:total] %></td>
-        <td><%= display_percentage(stats[:open], stats[:total] ) %></td>
-        <td><%= display_percentage(stats[:fixed], stats[:total] ) %></td>
-        <td><%= display_percentage(stats[:uncertain], stats[:total] ) %></td>
-        <td><%= pluralize(stats[:time_to_fix], t(:days)) %></td>
-      </tr>
-    <% end %>
+      <% if municipality.blank?
+           municipality = Municipality.new()
+           municipality.name = t(:not_in_portugal)
+         end %>
+          <% stats = reports_stats(reports) %>
+          <tr>
+            <td><%= municipality.try(:name) %></td>
+            <td><%= stats[:total] %></td>
+            <td><%= display_percentage(stats[:open], stats[:total]) %></td>
+            <td><%= display_percentage(stats[:fixed], stats[:total]) %></td>
+            <td><%= display_percentage(stats[:uncertain], stats[:total]) %></td>
+            <td><%= pluralize(stats[:time_to_fix], t(:days)) %></td>
+          </tr>
+
+  <% end %>
   </tbody>
   <tfoot>
     <tr>
