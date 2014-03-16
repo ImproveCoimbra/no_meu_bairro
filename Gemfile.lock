@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/gfelisberto/paperclip.git
-  revision: e7503f0f120ab0930f6d11b16180fe14a9c44d2a
+  revision: a484e8687b907e634119a893aaa171cf563a56d7
   specs:
-    paperclip (3.4.1)
+    paperclip (3.4.2)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -44,14 +44,14 @@ GEM
       builder
       mime-types
       xml-simple
-    aws-sdk (1.8.2)
+    aws-sdk (1.36.1)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     builder (3.0.4)
     climate_control (0.0.3)
       activesupport (>= 3.0)
-    cocaine (0.5.1)
+    cocaine (0.5.3)
       climate_control (>= 0.0.3, < 1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -59,14 +59,13 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.4.0)
+    coffee-script-source (1.7.0)
     erubis (2.7.0)
-    execjs (1.4.0)
-      multi_json (~> 1.0)
+    execjs (2.0.2)
     gmaps4rails (1.5.6)
     hike (1.2.3)
-    httparty (0.10.2)
-      multi_json (~> 1.0)
+    httparty (0.13.0)
+      json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.6.9)
     journey (1.0.4)
@@ -82,19 +81,20 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     mimetype-fu (0.1.2)
-    mongoid (3.1.0)
+    mini_portile (0.5.2)
+    mongoid (3.1.6)
       activemodel (~> 3.2)
-      moped (~> 1.4.2)
+      moped (~> 1.4)
       origin (~> 1.0)
-      tzinfo (~> 0.3.22)
-    mongoid-paperclip (0.0.8)
+      tzinfo (~> 0.3.29)
+    mongoid-paperclip (0.0.9)
       paperclip (>= 2.3.6)
-    moped (1.4.2)
+    moped (1.5.2)
     multi_json (1.9.0)
-    multi_xml (0.5.3)
-    nokogiri (1.5.6)
-    nokogiri (1.5.6-x86-mingw32)
-    origin (1.0.11)
+    multi_xml (0.5.5)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
+    origin (1.1.0)
     polyglot (0.3.4)
     rack (1.4.5)
     rack-cache (1.2)
@@ -125,7 +125,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.5)
-    sass (3.2.5)
+    sass (3.3.3)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -144,15 +144,14 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.39)
-    uglifier (1.3.0)
+    uglifier (2.5.0)
       execjs (>= 0.3.0)
-      multi_json (~> 1.0, >= 1.0.2)
-    uuidtools (2.1.3)
-    xml-simple (1.1.2)
+      json (>= 1.8.0)
+    uuidtools (2.1.4)
+    xml-simple (1.1.3)
 
 PLATFORMS
   ruby
-  x86-mingw32
 
 DEPENDENCIES
   aws-s3
