@@ -24,8 +24,8 @@ AMAZON_BUCKET: bucket
 
 # OST
 
-OST_API_KEY: TAyMyJAVrtlfuSYHKVqsafElbctGcPPmbRSIyJfC
+OST_API_KEY: You need to get an OST API KEy from http://www.ost.pt
 
 # RAILS
 
-RAILS_SECRET_TOKEN: b819b51b0bbfebfa13b60e870d77f0a8283e962a12c6087efa0ca7e02135ebaa60806cb9f7400d1323e70375a7a6a12840ae8c06efcb250f3d4b80c297e91676
+RAILS_SECRET_TOKEN: http://www.jamesbadger.ca/2012/12/18/generate-new-secret-token/
