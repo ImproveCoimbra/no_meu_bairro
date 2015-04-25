@@ -80,7 +80,7 @@ class Report
   def as_json(options={})
     options = {
         :include => {:photos => {:only => [:_id], :methods => :styles}},
-        :except => [:client_ip, :user_id] + options[:except]
+        :except => [:client_ip, :user_id, :token] + options[:except]
     }
     super(options)
   end
