@@ -11,3 +11,16 @@ class String
   end
 
 end
+
+require 'i18n' # without this, the gem will be loaded in the server but not in the console, for whatever reason
+
+# for translations that don't exist in the database, fallback to the Simple Backend which loads the default English Rails YAML files
+I18nSimpleBackend = I18n::Backend::Simple.new
+I18n.exception_handler = lambda do |exception, locale, key, options|
+  case exception
+  when I18n::MissingTranslationData
+    I18nSimpleBackend.translate(:en, key, options || {})
+  else
+    raise exception
+  end
+end

@@ -7,6 +7,7 @@ class MunicipalityFinder
     latitude = coordinates[1]
     #An empty or 0 range will return all the municipalitys in the district that the location belongs to
     full_url = "https://api.ost.pt/municipalities/?key=#@key&center=#{longitude},#{latitude}&range=0.0001"
+    p full_url
 
     results= nil
     while results==nil
@@ -18,6 +19,8 @@ class MunicipalityFinder
         puts e.backtrace.inspect
       end
     end
+
+    p results
 
     unless results['Objects'].empty?
       id = results['Objects'][0]['id']

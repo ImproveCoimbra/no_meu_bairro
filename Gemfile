@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
 
 ruby '1.9.3'
-gem 'rails', '~> 3.2.16'
-gem 'rails-i18n'
+gem 'rails', '~> 4.0.4'
+gem 'rails-i18n', '~> 4.0.0'
 
-gem 'mongoid'
+gem 'mongoid', '5.1.0'
+gem 'mongoid_paranoia'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails',   '~> 4.0.4'
+  gem 'coffee-rails', '~> 4.0.1'
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -28,3 +29,5 @@ gem 'httparty'
 gem 'therubyracer', :platform => :ruby
 
 gem 'figaro'
+
+gem 'dotenv-rails', :groups => [:development, :test]

@@ -9,7 +9,6 @@ class ReportPhoto
                                                      :medium => '400x400>',
                                                      :large => '1024x1024>'
   }
-  attr_accessible :attachment
 
   def styles
     Hash[(self.attachment.styles.keys + [:original]).map { |style| [style, self.attachment.url(style)] }]
