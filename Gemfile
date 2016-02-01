@@ -31,3 +31,5 @@ gem 'therubyracer', :platform => :ruby
 gem 'figaro'
 
 gem 'dotenv-rails', :groups => [:development, :test]
+
+gem 'puma'
