@@ -22,7 +22,7 @@ gem 'jquery-rails', '2.1.4'
 gem 'jquery-cookie-rails'
 
 gem 'mimetype-fu', :require => 'mimetype_fu'
-gem 'gmaps4rails', '2.1.2'
+gem 'gmaps4rails', '1.5.6'
 
 gem 'httparty'
 
