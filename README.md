@@ -1,6 +1,6 @@
 ## Welcome to No meu bairro
 
-This is the code behind [No meu bairro](http://nomeubairro.pt/) a web site were the user can report problems they have in their  neighborwood.
+This is the code behind [No meu bairro](http://nomeubairro.pt/) a web site were the user can report problems they have in their  neighborhood.
 
 We welcome forks and pull requests with new features.
 
